@@ -1,0 +1,10 @@
+.secondary-navigation {
+  display: flex;
+}
+.secondary-navigation__icon {
+  margin: 0 18px;
+}
+
+.secondary-navigation__icon:last-child {
+  margin-right: 0;
+}
