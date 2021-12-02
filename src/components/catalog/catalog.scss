@@ -1,5 +1,6 @@
 .catalog {
-  width: 69%;
+  width: 100%;
+  max-width: 700px;
 }
 
 .catalog__sort {
@@ -10,7 +11,22 @@
 }
 
 .catalog__button {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  border: none;
   margin-left: 19px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 
   &:not(:nth-child(1)) {
     margin-left: 34px;
@@ -20,4 +36,14 @@
 .catalog__sort-buttons {
   justify-self: flex-end;
   margin-left: auto;
+}
+
+.catalog__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.catalog__item {
+  width: 31%;
 }

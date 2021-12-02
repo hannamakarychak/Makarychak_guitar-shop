@@ -1,0 +1,56 @@
+.item {
+  padding: 12px 14px 20px 14px;
+  border: 1px solid #dddada;
+}
+
+.item__image {
+  display: block;
+  margin: 0 auto;
+  text-align: end;
+}
+
+.item__reviews {
+  display: flex;
+  align-items: center;
+}
+
+.item__reviews-count {
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  margin-left: 4px;
+  color: var(--dark-grey);
+}
+
+.item__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 7px 0 15px 0;
+}
+
+.item__heading,
+.item__price {
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.item__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__button {
+  width: 89px;
+  min-width: 40%;
+}
+
+.item__button-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+}

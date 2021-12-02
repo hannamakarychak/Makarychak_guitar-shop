@@ -32,3 +32,34 @@
   right: 0;
   top: -34px;
 }
+
+.header__icons {
+  display: flex;
+  align-items: center;
+}
+.header__icon {
+  margin: 0 36px;
+  color: var(--black);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.header__icon:last-child {
+  margin-right: 0;
+}
+
+.header__items-count {
+  height: 23px;
+  font-size: 10px;
+  line-height: 12px;
+  margin-left: 3px;
+  color: var(--red);
+}

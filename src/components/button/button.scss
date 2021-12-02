@@ -3,34 +3,44 @@
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.02em;
-  padding: 0;
+  padding: 4px 10px;
+  font-weight: bold;
+  border-radius: 2px;
+  color: var(--white);
+  background-color: var(--light-grey);
 
-  &--ghost {
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.05em;
-    background-color: transparent;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--dark);
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
+  &:hover {
+    background-color: var(--button-grey-hover);
   }
+
+  &:active {
+    background-color: var(--dark-grey);
+  }
+
+  // &--ghost {
+  //   background-color: transparent;
+
+  //   &:hover,
+  //   &:focus,
+  //   &:active {
+  //     color: var(--dark);
+  //   }
+
+  //   &:active {
+  //     opacity: 0.5;
+  //   }
+  // }
 
   &--accent {
-    font-weight: bold;
     color: var(--white);
     background-color: var(--accent);
-  }
 
-  &--main {
-    font-weight: bold;
-    color: var(--white);
-    background-color: var(--light-grey);
+    &:hover {
+      background-color: var(--accent-hover);
+    }
+
+    &:active {
+      background-color: var(--accent-active);
+    }
   }
 }

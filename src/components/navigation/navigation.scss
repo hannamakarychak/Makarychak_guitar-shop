@@ -1,10 +1,9 @@
-.navigation-list {
+.navigation__list {
   display: flex;
-
   list-style: none;
 }
 
-.navigation-list__link {
+.navigation__link {
   display: inline-block;
   margin: 0 20px;
   text-decoration: none;
@@ -12,4 +11,14 @@
   line-height: 20px;
   letter-spacing: 0.05em;
   color: var(--black);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
