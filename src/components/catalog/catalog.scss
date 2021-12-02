@@ -1,0 +1,23 @@
+.catalog {
+  width: 69%;
+}
+
+.catalog__sort {
+  display: flex;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+}
+
+.catalog__button {
+  margin-left: 19px;
+
+  &:not(:nth-child(1)) {
+    margin-left: 34px;
+  }
+}
+
+.catalog__sort-buttons {
+  justify-self: flex-end;
+  margin-left: auto;
+}

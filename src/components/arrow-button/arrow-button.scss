@@ -1,0 +1,23 @@
+.arrow-button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+
+  .arrow-button__icon {
+    fill: var(--black);
+
+    &:hover,
+    &:focus,
+    &:active {
+      fill: var(--medium-grey);
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &:first-child {
+    margin-right: 23px;
+  }
+}

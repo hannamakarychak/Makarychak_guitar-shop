@@ -7,6 +7,9 @@
   --white: #FFFFFF;
   --bg-header: rgba(30, 9, 6, 0.15);
   --dark: #474747;
+  --light-grey: #C1C1C1;
+  --accent: #E27F00;
+  --medium-grey: #6C6C6C;
 }
 
 body {
@@ -40,8 +43,4 @@ code {
     monospace;
 }
 
-.filters {
-  width: 208px;
-  height: 800px;
-  background-color: aliceblue;
-}
+

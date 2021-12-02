@@ -1,0 +1,36 @@
+.button {
+  border: none;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  padding: 0;
+
+  &--ghost {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--dark);
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &--accent {
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--accent);
+  }
+
+  &--main {
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--light-grey);
+  }
+}
