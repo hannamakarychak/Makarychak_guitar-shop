@@ -9,17 +9,20 @@
 .breadcrumbs__item {
   display: flex;
   align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--dark);
 }
 
 .breadcrumbs__icon {
-  display: inline-block;
-  margin-right: 12px;
+  margin: 0 12px;
 }
 
 .breadcrumbs__link {
-  font-size: 16px;
-  line-height: 19px;
   text-decoration: none;
   color: var(--dark);
-  margin-right: 12px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -39,3 +39,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.filters {
+  width: 208px;
+  height: 800px;
+  background-color: aliceblue;
+}
