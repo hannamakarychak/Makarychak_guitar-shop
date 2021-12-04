@@ -2,3 +2,13 @@
   display: flex;
   margin-top: 50px;
 }
+
+.main__filters {
+  width: 208px;
+  margin-right: 32px;
+  flex: 0 0 auto;
+}
+
+.main__catalog {
+  flex: 1 1 auto;
+}

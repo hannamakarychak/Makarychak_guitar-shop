@@ -1,0 +1,10 @@
+.socials-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socials-list__item:not(:last-child) {
+  margin-right: 22px;
+}

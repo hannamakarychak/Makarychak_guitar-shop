@@ -9,6 +9,16 @@
   color: var(--white);
   background-color: var(--light-grey);
 
+  &--medium {
+    padding: 8px 27px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
   &:hover {
     background-color: var(--button-grey-hover);
   }

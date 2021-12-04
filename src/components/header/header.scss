@@ -26,8 +26,9 @@
 }
 
 .header__image {
-  width: 878px;
-  height: 282px;
+  max-width: 878px;
+  width: 100%;
+  height: auto;
   position: absolute;
   right: 0;
   top: -34px;

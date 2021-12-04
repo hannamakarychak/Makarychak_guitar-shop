@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -15,6 +15,12 @@
   --accent-hover: #FFA839;
   --accent-active: #DA8B26;
   --red: #F20505;
+  --pale-grey: #F6F3F3;
+  --pale-orange: #F7F3F3;
+  --pale-grey2: #DDDDDD;
+  --dark2: #3F3F3F;
+
+
 }
 
 body {
@@ -48,4 +54,12 @@ code {
     monospace;
 }
 
-
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

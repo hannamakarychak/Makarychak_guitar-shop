@@ -21,8 +21,8 @@ const Main = () => {
           ]}
         />
         <div className="main">
-          <Filters />
-          <Catalog />
+          <Filters className="main__filters" />
+          <Catalog className="main__catalog" />
         </div>
       </Container>
     </main>
