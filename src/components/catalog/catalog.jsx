@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import Item from '../item/item';
+import CatalogItem from '../catalog-item/catalog-item';
 import Sort from '../sort/sort';
 
 import './catalog.scss';
@@ -10,7 +10,7 @@ const Catalog = ({ className }) => {
     <div className={classNames('catalog', className)}>
       <Sort />
       <div className="catalog__list">
-        {new Array(COUNT_PER_PAGE).fill(<Item className="catalog__item" />)}
+        {new Array(COUNT_PER_PAGE).fill(<CatalogItem className="catalog__item" />)}
       </div>
     </div>
   );

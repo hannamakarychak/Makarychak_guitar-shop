@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 
-const BasketIcon = ({ className }) => {
+const Basket = ({ className }) => {
   return (
     <svg
-      className={classNames(className, 'basket-icon')}
+      className={classNames(className, 'basket')}
       width="16"
       height="18"
       viewBox="0 0 16 18"
@@ -18,4 +18,4 @@ const BasketIcon = ({ className }) => {
   );
 };
 
-export default BasketIcon;
+export default Basket;

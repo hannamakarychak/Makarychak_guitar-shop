@@ -2,11 +2,10 @@ import Container from '../container/container';
 import Logo from '../logo/logo';
 import Navigation from '../navigation/navigation';
 import LocationIcon from '../location-icon/location-icon';
-import SearchIcon from '../search-icon/search-icon';
-import BasketIcon from '../basket-icon/basket-icon';
 import imageHeader from '../../img/image_header.png';
 import imageHeader2x from '../../img/image_header@2x.png';
-
+import Basket from '../icons/basket/basket';
+import Search from '../icons/search/search';
 import './header.scss';
 
 const Header = () => {
@@ -21,10 +20,10 @@ const Header = () => {
               <LocationIcon className="header__icon" />
             </a>
             <a className="header__link" href="/">
-              <SearchIcon className="header__icon" />
+              <Search className="header__icon" />
             </a>
             <a className="header__link" href="/">
-              <BasketIcon className="header__icon" />
+              <Basket className="header__icon" />
             </a>
             <span className="header__items-count">2</span>
           </div>

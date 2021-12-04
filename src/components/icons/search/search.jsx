@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 
-const SearchIcon = ({ className }) => {
+const Search = ({ className }) => {
   return (
     <svg
-      className={classNames(className, 'search-icon')}
+      className={classNames(className, 'search')}
       width="14"
       height="14"
       viewBox="0 0 14 14"
@@ -20,4 +20,4 @@ const SearchIcon = ({ className }) => {
   );
 };
 
-export default SearchIcon;
+export default Search;
