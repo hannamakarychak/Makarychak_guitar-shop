@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import Facebook from '../facebook/facebook';
-import Instagram from '../instagram/instagram';
-import Twitter from '../twitter/twitter';
+import Facebook from '../../components/icons/facebook/facebook';
+import Instagram from '../../components/icons/instagram/instagram';
+import Twitter from '../../components/icons/twitter/twitter';
 import './socials-list.scss';
 
 const SocialsList = ({ className }) => {
