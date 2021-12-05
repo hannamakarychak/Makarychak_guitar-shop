@@ -1,11 +1,11 @@
 import Container from '../container/container';
-import Logo from '../logo/logo';
+import Logo from '../icons/logo/logo';
 import Navigation from '../navigation/navigation';
-import LocationIcon from '../location-icon/location-icon';
 import imageHeader from '../../img/image_header.png';
 import imageHeader2x from '../../img/image_header@2x.png';
 import Basket from '../icons/basket/basket';
 import Search from '../icons/search/search';
+import Location from '../icons/location/location';
 import './header.scss';
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
           <Navigation />
           <div className="header__icons">
             <a className="header__link" href="/">
-              <LocationIcon className="header__icon" />
+              <Location className="header__icon" />
             </a>
             <a className="header__link" href="/">
               <Search className="header__icon" />

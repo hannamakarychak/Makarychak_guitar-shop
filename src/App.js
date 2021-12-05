@@ -1,16 +1,7 @@
-import './App.scss';
-import Footer from './components/footer/footer';
-import Header from './components/header/header';
-import Main from './components/main/main';
+import MainPage from './components/main-page/main-page';
 
 function App() {
-  return (
-    <div className="app">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
-  );
+  return <MainPage />;
 }
 
 export default App;

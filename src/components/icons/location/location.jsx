@@ -1,9 +1,7 @@
-import classNames from 'classnames';
-
-const LocationIcon = ({ className }) => {
+const Location = ({ className }) => {
   return (
     <svg
-      className={classNames(className, 'location-icon')}
+      className={className}
       width="14"
       height="17"
       viewBox="0 0 14 17"
@@ -28,4 +26,4 @@ const LocationIcon = ({ className }) => {
   );
 };
 
-export default LocationIcon;
+export default Location;

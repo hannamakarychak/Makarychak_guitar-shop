@@ -1,4 +1,4 @@
-import Logo from '../logo/logo';
+import Logo from '../icons/logo/logo';
 import Container from '../container/container';
 import SocialsList from '../socials-list/socials-list';
 import Phone from '../icons/phone/phone';
