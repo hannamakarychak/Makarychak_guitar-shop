@@ -13,35 +13,18 @@ import './catalog-item.scss';
 
 const CatalogItem = ({ className, name, id, type, reviews, price }) => {
   const getImgByType = (type) => {
-    let imgByType = (
-      <img
-        className="catalog-item__image"
-        srcSet={`${ukulele}, ${ukulele2x} 2x`}
-        src={ukulele}
-        alt={name}
-      />
-    );
+    let src = ukulele;
+    let srcSet = `${ukulele}, ${ukulele2x} 2x`;
 
     if (type === 'electro') {
-      imgByType = (
-        <img
-          className="catalog-item__image"
-          srcSet={`${electro}, ${electro2x} 2x`}
-          src={electro}
-          alt={name}
-        />
-      );
+      src = electro;
+      srcSet = `${electro}, ${electro2x} 2x`;
     } else if (type === 'acoustic') {
-      imgByType = (
-        <img
-          className="catalog-item__image"
-          srcSet={`${acoustic}, ${acoustic2x} 2x`}
-          src={acoustic}
-          alt={name}
-        />
-      );
+      src = acoustic;
+      srcSet = `${acoustic}, ${acoustic2x} 2x`;
     }
-    return imgByType;
+
+    return <img className="catalog-item__image" srcSet={srcSet} src={src} alt={name} />;
   };
 
   return (

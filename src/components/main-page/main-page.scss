@@ -11,4 +11,10 @@
 
 .main-page__catalog {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page__pagination {
+  align-self: flex-end;
 }

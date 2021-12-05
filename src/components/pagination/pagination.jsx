@@ -1,20 +1,23 @@
+import classNames from 'classnames';
 import ReactPaginate from 'react-paginate';
 
-const Pagination = ({ currentPage, pageCount, onPageChange }) => {
+import './pagination.scss';
+
+const Pagination = ({ currentPage, pageCount, onPageChange, className }) => {
   return (
     <ReactPaginate
-      previousLabel="Previous"
-      nextLabel="Next"
-      pageClassName="page-item"
-      pageLinkClassName="page-link"
-      previousClassName="page-item"
-      previousLinkClassName="page-link"
-      nextClassName="page-item"
-      nextLinkClassName="page-link"
+      previousLabel="Назад"
+      nextLabel="Далее"
+      pageClassName="pagination__item"
+      pageLinkClassName="pagination__link"
+      previousClassName="pagination__item"
+      previousLinkClassName="pagination__link"
+      nextClassName="pagination__item"
+      nextLinkClassName="pagination__link"
       breakLabel="..."
-      breakClassName="page-item"
-      breakLinkClassName="page-link"
-      containerClassName="pagination"
+      breakClassName="pagination__item"
+      breakLinkClassName="pagination__link"
+      containerClassName={classNames(className, 'pagination')}
       activeClassName="active"
       forcePage={currentPage} // current page number
       pageCount={pageCount} // total pages

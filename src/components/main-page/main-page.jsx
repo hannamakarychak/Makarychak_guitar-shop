@@ -33,9 +33,14 @@ const MainPage = () => {
         <div className="main-page__catalog">
           <Sort />
           <Catalog items={guitars} />
+          <Pagination
+            className="main-page__pagination"
+            pageCount={12}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
-      <Pagination pageCount={12} currentPage={currentPage} onPageChange={handlePageChange} />
     </Page>
   );
 };
