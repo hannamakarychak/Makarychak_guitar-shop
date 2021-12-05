@@ -7,6 +7,7 @@ import Basket from '../icons/basket/basket';
 import Search from '../icons/search/search';
 import Location from '../icons/location/location';
 import './header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -22,9 +23,9 @@ const Header = () => {
             <a className="header__link" href="/">
               <Search className="header__icon" />
             </a>
-            <a className="header__link" href="/">
+            <Link className="header__link" to="/checkout">
               <Basket className="header__icon" />
-            </a>
+            </Link>
             <span className="header__items-count">2</span>
           </div>
         </Container>
