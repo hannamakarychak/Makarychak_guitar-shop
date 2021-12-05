@@ -5,7 +5,7 @@ const Breadcrumbs = ({ items }) => {
   return (
     <ul className="breadcrumbs">
       {items.map((item, index) => (
-        <li className="breadcrumbs__item">
+        <li className="breadcrumbs__item" key={item.name}>
           {index !== items.length - 1 ? (
             <Fragment>
               <a href={item.link} className="breadcrumbs__link">

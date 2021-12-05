@@ -1,16 +1,21 @@
-import classNames from 'classnames';
 import CatalogItem from '../catalog-item/catalog-item';
-import Sort from '../sort/sort';
 
 import './catalog.scss';
 
-const Catalog = ({ className }) => {
-  const COUNT_PER_PAGE = 12;
+const Catalog = ({ items }) => {
   return (
-    <div className={classNames('catalog', className)}>
-      <Sort />
+    <div className="catalog">
       <div className="catalog__list">
-        {new Array(COUNT_PER_PAGE).fill(<CatalogItem className="catalog__item" />)}
+        {items.map((item) => (
+          <CatalogItem
+            className="catalog__item"
+            key={item.id}
+            name={item.name}
+            type={item.type}
+            reviews={item.reviews}
+            price={item.price}
+          />
+        ))}
       </div>
     </div>
   );
