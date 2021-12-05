@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { getNumberWithSpaces } from '../../utils';
 import Button from '../button/button';
 import Checkbox from '../checkbox/checkbox';
 import HeadingSecondary from '../heading-secondary/heading-secondary';
@@ -15,13 +16,19 @@ const Filters = ({ className }) => {
             Цена, ₽
           </label>
           <div className="filters__input-container">
-            <input type="number" min="0" id="price" placeholder="1000" className="filters__price" />
+            <input
+              type="number"
+              min="0"
+              id="price"
+              placeholder={getNumberWithSpaces(1000)}
+              className="filters__price"
+            />
             <span className="filters__line"></span>
             <input
               type="number"
               min="0"
               id="price"
-              placeholder="30000"
+              placeholder={getNumberWithSpaces(30000)}
               className="filters__price"
             />
           </div>

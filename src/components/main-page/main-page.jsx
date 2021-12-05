@@ -3,12 +3,12 @@ import Catalog from '../catalog/catalog';
 import Filters from '../filters/filters';
 import Page from '../page/page';
 import Pagination from '../pagination/pagination';
-import guitars from '../../guitars.json';
-
-import './main-page.scss';
+import allGuitars from '../../guitars.json';
 import Sort from '../sort/sort';
 
-console.log(guitars);
+import './main-page.scss';
+
+const PAGE_SIZE = 4;
 
 const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -16,6 +16,15 @@ const MainPage = () => {
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
   };
+
+  const filteredGuitars = allGuitars; // call function to filter out guitars instead of "allGuitars"
+
+  const pageCount = Math.ceil(filteredGuitars.length / PAGE_SIZE);
+
+  const guitarsOnPage = filteredGuitars.slice(
+    PAGE_SIZE * currentPage,
+    PAGE_SIZE * currentPage + PAGE_SIZE
+  );
 
   return (
     <Page
@@ -32,10 +41,10 @@ const MainPage = () => {
         <Filters className="main-page__filters" />
         <div className="main-page__catalog">
           <Sort />
-          <Catalog items={guitars} />
+          <Catalog items={guitarsOnPage} />
           <Pagination
             className="main-page__pagination"
-            pageCount={12}
+            pageCount={pageCount}
             currentPage={currentPage}
             onPageChange={handlePageChange}
           />

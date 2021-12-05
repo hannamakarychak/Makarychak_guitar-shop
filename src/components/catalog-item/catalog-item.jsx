@@ -10,6 +10,7 @@ import ukulele2x from '../../img/ukulele@2x.png';
 import Button from '../button/button';
 import Stars from '../icons/stars/stars';
 import './catalog-item.scss';
+import { getNumberWithSpaces } from '../../utils';
 
 const CatalogItem = ({ className, name, id, type, reviews, price }) => {
   const getImgByType = (type) => {
@@ -36,7 +37,7 @@ const CatalogItem = ({ className, name, id, type, reviews, price }) => {
       </div>
       <div className="catalog-item__description">
         <h4 className="catalog-item__heading">{name}</h4>
-        <span className="catalog-item__price">{price} ₽</span>
+        <span className="catalog-item__price">{getNumberWithSpaces(price)} ₽</span>
       </div>
       <div className="catalog-item__buttons">
         <Button className="catalog-item__button">Подробнее</Button>
