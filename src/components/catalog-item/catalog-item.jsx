@@ -12,7 +12,7 @@ import Stars from '../icons/stars/stars';
 import './catalog-item.scss';
 import { getNumberWithSpaces } from '../../utils';
 
-const CatalogItem = ({ className, name, id, type, reviews, price }) => {
+const CatalogItem = ({ className, name, id, type, reviews, price, onAdd }) => {
   const getImgByType = (type) => {
     let src = ukulele;
     let srcSet = `${ukulele}, ${ukulele2x} 2x`;
@@ -45,6 +45,7 @@ const CatalogItem = ({ className, name, id, type, reviews, price }) => {
           className="catalog-item__button"
           accent
           icon={<Cart className="catalog-item__button-icon" />}
+          onClick={() => onAdd(id)}
         >
           Купить
         </Button>

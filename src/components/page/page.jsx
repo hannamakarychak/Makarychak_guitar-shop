@@ -5,10 +5,10 @@ import Footer from '../footer/footer';
 import Header from '../header/header';
 import Heading from '../heading/heading';
 
-const Page = ({ heading, breadcrumbs, children }) => {
+const Page = ({ heading, breadcrumbs, children, productCount }) => {
   return (
     <Fragment>
-      <Header />
+      <Header productCount={productCount} />
       <main>
         <Container>
           <Heading>{heading}</Heading>

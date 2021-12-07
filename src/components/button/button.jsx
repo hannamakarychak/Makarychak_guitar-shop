@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import './button.scss';
 
-const Button = ({ className, children, icon, accent, isMedium, isLarge, isUppercase }) => {
+const Button = ({ className, children, icon, accent, isMedium, isLarge, isUppercase, onClick }) => {
   return (
     <button
       className={classNames(
@@ -13,6 +13,7 @@ const Button = ({ className, children, icon, accent, isMedium, isLarge, isUpperc
         { 'button--large': isLarge },
         { 'button--uppercase': isUppercase }
       )}
+      onClick={onClick}
     >
       {icon && <span>{icon}</span>}
       {children}

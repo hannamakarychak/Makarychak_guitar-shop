@@ -2,7 +2,7 @@ import CatalogItem from '../catalog-item/catalog-item';
 
 import './catalog.scss';
 
-const Catalog = ({ items }) => {
+const Catalog = ({ items, onProductAdd }) => {
   return (
     <div className="catalog">
       <div className="catalog__list">
@@ -14,6 +14,8 @@ const Catalog = ({ items }) => {
             type={item.type}
             reviews={item.reviews}
             price={item.price}
+            id={item.id}
+            onAdd={onProductAdd}
           />
         ))}
       </div>

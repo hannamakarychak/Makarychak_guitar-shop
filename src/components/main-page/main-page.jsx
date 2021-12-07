@@ -10,7 +10,7 @@ import './main-page.scss';
 
 const PAGE_SIZE = 4;
 
-const MainPage = () => {
+const MainPage = ({ onProductAdd, productCount }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const handlePageChange = (event) => {
@@ -36,12 +36,13 @@ const MainPage = () => {
         },
         { name: 'Каталог', link: '/' },
       ]}
+      productCount={productCount}
     >
       <div className="main-page">
         <Filters className="main-page__filters" />
         <div className="main-page__catalog">
           <Sort />
-          <Catalog items={guitarsOnPage} />
+          <Catalog items={guitarsOnPage} onProductAdd={onProductAdd} />
           <Pagination
             className="main-page__pagination"
             pageCount={pageCount}

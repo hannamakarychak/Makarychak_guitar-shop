@@ -9,7 +9,7 @@ import Location from '../icons/location/location';
 import './header.scss';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ productCount }) => {
   return (
     <header className="header">
       <div className="header__top">
@@ -26,7 +26,7 @@ const Header = () => {
             <Link className="header__link" to="/checkout">
               <Basket className="header__icon" />
             </Link>
-            <span className="header__items-count">2</span>
+            {productCount > 0 && <span className="header__items-count">{productCount}</span>}
           </div>
         </Container>
       </div>
