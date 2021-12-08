@@ -34,39 +34,63 @@ const Footer = () => {
           </div>
           <div className="footer__section footer__section--catalog">
             <h3 className="footer__heading">Каталог</h3>
-            <a href="/" className="footer__link">
-              Акустические гитары
-            </a>
-            <a href="/" className="footer__link">
-              Классические гитары
-            </a>
-            <a href="/" className="footer__link">
-              Электрогитары
-            </a>
-            <a href="/" className="footer__link">
-              Бас-гитары
-            </a>
-            <a href="/" className="footer__link">
-              Укулеле
-            </a>
+            <ul className="footer__list">
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Акустические гитары
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Классические гитары
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Электрогитары
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Бас-гитары
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Укулеле
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="footer__section footer__section--info">
             <h3 className="footer__heading">Информация</h3>
-            <a href="/" className="footer__link">
-              Где купить?
-            </a>
-            <a href="/" className="footer__link">
-              Блог
-            </a>
-            <a href="/" className="footer__link">
-              Вопрос - ответ
-            </a>
-            <a href="/" className="footer__link">
-              Возврат
-            </a>
-            <a href="/" className="footer__link">
-              Сервис-центры
-            </a>
+            <ul className="footer__list">
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Где купить?
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Блог
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Вопрос - ответ
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Возврат
+                </a>
+              </li>
+              <li className="footer__list-item">
+                <a href="/" className="footer__link">
+                  Сервис-центры
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="footer__section footer__section--contacts">
             <h3 className="footer__heading">Контакты</h3>

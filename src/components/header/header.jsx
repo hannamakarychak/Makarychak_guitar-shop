@@ -16,18 +16,24 @@ const Header = ({ productCount }) => {
         <Container className="header__container">
           <Logo />
           <Navigation />
-          <div className="header__icons">
-            <a className="header__link" href="/">
-              <Location className="header__icon" />
-            </a>
-            <a className="header__link" href="/">
-              <Search className="header__icon" />
-            </a>
-            <Link className="header__link" to="/checkout">
-              <Basket className="header__icon" />
-            </Link>
-            {productCount > 0 && <span className="header__items-count">{productCount}</span>}
-          </div>
+          <ul className="header__list">
+            <li className="header__item">
+              <a className="header__link" href="/">
+                <Location className="header__icon" />
+              </a>
+            </li>
+            <li className="header__item">
+              <a className="header__link" href="/">
+                <Search className="header__icon" />
+              </a>
+            </li>
+            <li className="header__item">
+              <Link className="header__link" to="/checkout">
+                <Basket className="header__icon" />
+              </Link>
+              {productCount > 0 && <span className="header__items-count">{productCount}</span>}
+            </li>
+          </ul>
         </Container>
       </div>
       <div className="header__bottom">
