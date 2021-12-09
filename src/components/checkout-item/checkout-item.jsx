@@ -19,8 +19,8 @@ const CheckoutItem = ({
   stringsNumber,
   price,
   cartProducts,
-  onAddClick,
-  onMinusClick,
+  onProductAdd,
+  onProductRemove,
 }) => {
   const getImgByType = (type) => {
     let src = ukuleleSmall;
@@ -50,7 +50,7 @@ const CheckoutItem = ({
 
   return (
     <div className="checkout-item">
-      <button className="checkout-item__delete-button">
+      <button className="checkout-item__delete-button" onClick={() => onProductRemove(id, true)}>
         <Cross />
       </button>
       <div className="checkout-item__image-container">{getImgByType(type)}</div>
@@ -61,11 +61,11 @@ const CheckoutItem = ({
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
-        <button className="checkout-item__change-amount" onClick={() => onMinusClick(id)}>
+        <button className="checkout-item__change-amount" onClick={() => onProductRemove(id)}>
           <Minus />
         </button>
         <span className="checkout-item__amount">{numberOfItems}</span>
-        <button className="checkout-item__change-amount" onClick={() => onAddClick(id)}>
+        <button className="checkout-item__change-amount" onClick={() => onProductAdd(id)}>
           <Plus />
         </button>
       </div>

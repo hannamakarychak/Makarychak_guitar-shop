@@ -12,8 +12,10 @@ function App() {
     setCartProducts([...cartProducts, id]);
   };
 
-  const handleMinusClick = (id, isAll = false) => {
-    const newCartProducts = cartProducts.filter((el, index) => cartProducts.indexOf(id) !== index);
+  const handleProductRemove = (id, shouldRemoveAll = false) => {
+    const newCartProducts = shouldRemoveAll
+      ? cartProducts.filter((el) => el !== id)
+      : cartProducts.filter((el, index) => cartProducts.indexOf(id) !== index);
     setCartProducts(newCartProducts);
   };
 
@@ -27,8 +29,8 @@ function App() {
           element={
             <CheckoutPage
               cartProducts={cartProducts}
-              onAddClick={handleProductAdd}
-              onMinusClick={handleMinusClick}
+              onProductAdd={handleProductAdd}
+              onProductRemove={handleProductRemove}
             />
           }
         />

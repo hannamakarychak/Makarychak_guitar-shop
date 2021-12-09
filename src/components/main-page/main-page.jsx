@@ -13,6 +13,11 @@ const PAGE_SIZE = 4;
 const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
+  const [isAddPopupOpen, setAddPopupOpen] = useState(false);
+
+  const onPopupOpen = (id) => setAddPopupOpen(true);
+  const onPopupClose = () => setAddPopupOpen(false);
+
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
   };
@@ -41,7 +46,7 @@ const MainPage = ({ onProductAdd }) => {
         <Filters className="main-page__filters" />
         <div className="main-page__catalog">
           <Sort />
-          <Catalog items={guitarsOnPage} onProductAdd={onProductAdd} />
+          <Catalog items={guitarsOnPage} onProductAdd={onPopupOpen} />
           <Pagination
             className="main-page__pagination"
             pageCount={pageCount}

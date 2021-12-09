@@ -5,7 +5,7 @@ import allGuitars from '../../guitars.json';
 
 import './checkout-page.scss';
 
-const CheckoutPage = ({ cartProducts, onAddClick, onMinusClick }) => {
+const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
   const uniqueProducts = [...new Set(cartProducts)].sort();
 
   console.log({ uniqueProducts, cartProducts });
@@ -36,8 +36,8 @@ const CheckoutPage = ({ cartProducts, onAddClick, onMinusClick }) => {
               stringsNumber={element.stringsNumber}
               price={element.price}
               cartProducts={cartProducts}
-              onAddClick={onAddClick}
-              onMinusClick={onMinusClick}
+              onProductAdd={onProductAdd}
+              onProductRemove={onProductRemove}
             />
           );
         })}
