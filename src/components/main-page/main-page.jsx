@@ -10,7 +10,7 @@ import './main-page.scss';
 
 const PAGE_SIZE = 4;
 
-const MainPage = ({ onProductAdd, productCount }) => {
+const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const handlePageChange = (event) => {
@@ -36,7 +36,6 @@ const MainPage = ({ onProductAdd, productCount }) => {
         },
         { name: 'Каталог', link: '/' },
       ]}
-      productCount={productCount}
     >
       <div className="main-page">
         <Filters className="main-page__filters" />

@@ -73,6 +73,7 @@
   letter-spacing: 0.05em;
 
   &--bold {
+    text-align: end;
     margin-right: 0;
     justify-self: flex-end;
     margin-left: auto;
@@ -85,7 +86,7 @@
   justify-content: center;
   display: flex;
   width: 28px;
-  height: 30px;
+  height: 28px;
   background-color: transparent;
   border: 1px solid var(--dark-grey);
   color: var(--dark-grey);
@@ -113,7 +114,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 71px;
-  margin-right: 8%;
   border-top: 1px solid var(--dark-grey);
   border-bottom: 1px solid var(--dark-grey);
 }

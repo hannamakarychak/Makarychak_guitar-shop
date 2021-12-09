@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "code ": "SO757575",
+    "code": "SO757575",
     "name": "Честер Bass",
     "type": "electro",
     "reviews": 15,
@@ -10,7 +10,7 @@
   },
   {
     "id": "2",
-    "code ": "TK129049",
+    "code": "TK129049",
     "name": "СURT Z300",
     "type": "electro",
     "reviews": 9,
@@ -19,7 +19,7 @@
   },
   {
     "id": "3",
-    "code ": "RO111111",
+    "code": "RO111111",
     "name": "Roman LX",
     "type": "ukulele",
     "reviews": 21,
@@ -28,7 +28,7 @@
   },
   {
     "id": "4",
-    "code ": "TK436457",
+    "code": "TK436457",
     "name": "СURT T300",
     "type": "electro",
     "reviews": 15,
@@ -37,7 +37,7 @@
   },
   {
     "id": "5",
-    "code ": "DI192138",
+    "code": "DI192138",
     "name": "Dania Super",
     "type": "acoustic",
     "reviews": 5,
@@ -46,7 +46,7 @@
   },
   {
     "id": "6",
-    "code ": "SO934345",
+    "code": "SO934345",
     "name": "Честер WX ",
     "type": "electro",
     "reviews": 17,
@@ -55,7 +55,7 @@
   },
   {
     "id": "7",
-    "code ": "DI082347",
+    "code": "DI082347",
     "name": "Dania VX",
     "type": "ukulele",
     "reviews": 5,
@@ -64,7 +64,7 @@
   },
   {
     "id": "8",
-    "code ": "SO135646",
+    "code": "SO135646",
     "name": "Честер Plus ",
     "type": "electro",
     "reviews": 27,
@@ -73,7 +73,7 @@
   },
   {
     "id": "9",
-    "code ": "VO154751",
+    "code": "VO154751",
     "name": "Виолана 300",
     "type": "acoustic",
     "reviews": 3,
@@ -82,7 +82,7 @@
   },
   {
     "id": "10",
-    "code ": "TK244556",
+    "code": "TK244556",
     "name": "СURT Clasic",
     "type": "electro",
     "reviews": 20,
@@ -91,7 +91,7 @@
   },
   {
     "id": "11",
-    "code ": "TK134663",
+    "code": "TK134663",
     "name": "СURT Z250",
     "type": "electro",
     "reviews": 19,
@@ -100,7 +100,7 @@
   },
   {
     "id": "12",
-    "code ": "SO123212",
+    "code": "SO123212",
     "name": "Честер 7X",
     "type": "electro",
     "reviews": 30,
@@ -109,7 +109,7 @@
   },
   {
     "id": "13",
-    "code ": "SO123234",
+    "code": "SO123234",
     "name": "Честер 6V",
     "type": "electro",
     "reviews": 28,
@@ -118,7 +118,7 @@
   },
   {
     "id": "14",
-    "code ": "VO519510",
+    "code": "VO519510",
     "name": "Виолана Mix",
     "type": "acoustic",
     "reviews": 7,
@@ -127,7 +127,7 @@
   },
   {
     "id": "15",
-    "code ": "VO457369",
+    "code": "VO457369",
     "name": "Виолана 250x",
     "type": "acoustic",
     "reviews": 19,
@@ -136,7 +136,7 @@
   },
   {
     "id": "16",
-    "code ": "FB625903",
+    "code": "FB625903",
     "name": "Фабио Лайт",
     "type": "acoustic",
     "reviews": 26,
@@ -145,7 +145,7 @@
   },
   {
     "id": "17",
-    "code ": "FB576948",
+    "code": "FB576948",
     "name": "Фабио L100",
     "type": "acoustic",
     "reviews": 31,
@@ -154,7 +154,7 @@
   },
   {
     "id": "18",
-    "code ": "LU012032",
+    "code": "LU012032",
     "name": "Liana Z200",
     "type": "acoustic",
     "reviews": 28,
@@ -163,7 +163,7 @@
   },
   {
     "id": "19",
-    "code ": "LU546853",
+    "code": "LU546853",
     "name": "Liana Z100",
     "type": "acoustic",
     "reviews": 34,
@@ -172,7 +172,7 @@
   },
   {
     "id": "20",
-    "code ": "LU458283",
+    "code": "LU458283",
     "name": "Liana Z300",
     "type": "acoustic",
     "reviews": 9,
@@ -181,7 +181,7 @@
   },
   {
     "id": "21",
-    "code ": "RO324341",
+    "code": "RO324341",
     "name": "Roman RX",
     "type": "ukulele",
     "reviews": 37,
@@ -190,7 +190,7 @@
   },
   {
     "id": "22",
-    "code ": "RO214235",
+    "code": "RO214235",
     "name": "Roman TX",
     "type": "ukulele",
     "reviews": 5,
@@ -199,7 +199,7 @@
   },
   {
     "id": "23",
-    "code ": "DI132414",
+    "code": "DI132414",
     "name": "Dania U100",
     "type": "ukulele",
     "reviews": 23,
@@ -208,7 +208,7 @@
   },
   {
     "id": "24",
-    "code ": "DI934754",
+    "code": "DI934754",
     "name": "Dania WR",
     "type": "ukulele",
     "reviews": 3,
@@ -217,7 +217,7 @@
   },
   {
     "id": "25",
-    "code ": "DI034292",
+    "code": "DI034292",
     "name": "Dania LE",
     "type": "ukulele",
     "reviews": 10,
@@ -226,7 +226,7 @@
   },
   {
     "id": "26",
-    "code ": "MI193214",
+    "code": "MI193214",
     "name": "Mirana V10",
     "type": "ukulele",
     "reviews": 14,
@@ -235,7 +235,7 @@
   },
   {
     "id": "27",
-    "code ": "VO043244",
+    "code": "VO043244",
     "name": "Виолана Mini",
     "type": "ukulele",
     "reviews": 29,

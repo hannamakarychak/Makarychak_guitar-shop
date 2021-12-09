@@ -11,7 +11,7 @@ import './checkout-item.scss';
 import Cross from '../icons/cross/cross';
 import { getNumberWithSpaces } from '../../utils';
 
-const CheckoutItem = ({ amount, id, code, name, type, stringsNumber, price }) => {
+const CheckoutItem = ({ id, code, name, type, stringsNumber, price, cartProducts, onAddClick }) => {
   const getImgByType = (type) => {
     let src = ukuleleSmall;
     let srcSet = `${ukuleleSmall}, ${ukuleleSmall2x} 2x`;
@@ -35,6 +35,9 @@ const CheckoutItem = ({ amount, id, code, name, type, stringsNumber, price }) =>
       />
     );
   };
+
+  const numberOfItems = cartProducts.filter((el) => el === id).length;
+
   return (
     <div className="checkout-item">
       <button className="checkout-item__delete-button">
@@ -42,8 +45,8 @@ const CheckoutItem = ({ amount, id, code, name, type, stringsNumber, price }) =>
       </button>
       <div className="checkout-item__image-container">{getImgByType(type)}</div>
       <dl className="checkout-item__info">
-        <dt className="checkout-item__heading">{(type, name)}</dt>
-        <dd className="checkout-item__description">Артикул: {code}</dd>
+        <dt className="checkout-item__heading">{`${type} ${name}`}</dt>
+        <dd className="checkout-item__description">{`Артикул: ${code}`}</dd>
         <dd className="checkout-item__description">{`${type} , ${stringsNumber} струнная`}</dd>
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
@@ -51,13 +54,13 @@ const CheckoutItem = ({ amount, id, code, name, type, stringsNumber, price }) =>
         <button className="checkout-item__change-amount">
           <Minus />
         </button>
-        <span className="checkout-item__amount">{amount}</span>
-        <button className="checkout-item__change-amount">
+        <span className="checkout-item__amount">{numberOfItems}</span>
+        <button className="checkout-item__change-amount" onClick={() => onAddClick(id)}>
           <Plus />
         </button>
       </div>
       <span className="checkout-item__price checkout-item__price--bold">{`${getNumberWithSpaces(
-        price
+        price * numberOfItems
       )} ₽`}</span>
     </div>
   );

@@ -1,0 +1,61 @@
+.checkout-page__promo-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+
+.checkout-page__promo-heading {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  margin: 0 0 9px 0;
+}
+
+.checkout-page__promo-label {
+  display: block;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.checkout-page__input {
+  display: inline-block;
+  max-width: 170px;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 7px;
+  margin-right: 33px;
+  border: 2px solid #dddada;
+  border-radius: 2px;
+}
+
+.checkout-page__apply-promocode {
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.checkout-page__price-total {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 15px;
+  text-align: end;
+  letter-spacing: 0.05em;
+  margin-bottom: 44px;
+}
+
+.checkout-page__submit {
+  min-width: 220px;
+  font-size: 16px;
+  line-height: 15px;
+  padding: 10px;
+  letter-spacing: 0.05em;
+}

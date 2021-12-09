@@ -4,15 +4,4 @@ export const getNumberWithSpaces = (x) => {
   return parts.join('.');
 };
 
-export const getCounter = (id, array) => {
-  let counter = 0;
-
-  array.forEach((el) => {
-    if (el === id) {
-      counter++;
-    }
-  });
-  return counter;
-};
-
 export const deleteId = (id, array) => array.filter((el, index) => array.indexOf(id) !== index);
