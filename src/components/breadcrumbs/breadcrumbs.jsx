@@ -43,13 +43,3 @@ const Breadcrumbs = ({ items }) => {
 };
 
 export default Breadcrumbs;
-
-// if (index !== items.length - 1) {
-//   return (
-//     <li className="breadcrumbs__item">
-
-//     </li>
-//   );
-// } else {
-//   return
-// }

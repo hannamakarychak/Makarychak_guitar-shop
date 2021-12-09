@@ -5,11 +5,10 @@ import allGuitars from '../../guitars.json';
 
 import './checkout-page.scss';
 
-const CheckoutPage = ({ cartProducts, onAddClick }) => {
-  const uniqueProducts = [...new Set(cartProducts)];
+const CheckoutPage = ({ cartProducts, onAddClick, onMinusClick }) => {
+  const uniqueProducts = [...new Set(cartProducts)].sort();
 
-  console.log({ uniqueProducts: uniqueProducts });
-  console.log({ allGuitars: allGuitars });
+  console.log({ uniqueProducts, cartProducts });
 
   return (
     <Page
@@ -38,6 +37,7 @@ const CheckoutPage = ({ cartProducts, onAddClick }) => {
               price={element.price}
               cartProducts={cartProducts}
               onAddClick={onAddClick}
+              onMinusClick={onMinusClick}
             />
           );
         })}

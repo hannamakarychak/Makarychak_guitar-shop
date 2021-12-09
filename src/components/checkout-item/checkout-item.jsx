@@ -11,7 +11,17 @@ import './checkout-item.scss';
 import Cross from '../icons/cross/cross';
 import { getNumberWithSpaces } from '../../utils';
 
-const CheckoutItem = ({ id, code, name, type, stringsNumber, price, cartProducts, onAddClick }) => {
+const CheckoutItem = ({
+  id,
+  code,
+  name,
+  type,
+  stringsNumber,
+  price,
+  cartProducts,
+  onAddClick,
+  onMinusClick,
+}) => {
   const getImgByType = (type) => {
     let src = ukuleleSmall;
     let srcSet = `${ukuleleSmall}, ${ukuleleSmall2x} 2x`;
@@ -51,7 +61,7 @@ const CheckoutItem = ({ id, code, name, type, stringsNumber, price, cartProducts
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
-        <button className="checkout-item__change-amount">
+        <button className="checkout-item__change-amount" onClick={() => onMinusClick(id)}>
           <Minus />
         </button>
         <span className="checkout-item__amount">{numberOfItems}</span>

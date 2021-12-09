@@ -12,12 +12,26 @@ function App() {
     setCartProducts([...cartProducts, id]);
   };
 
+  const handleMinusClick = (id, isAll = false) => {
+    const newCartProducts = cartProducts.filter((el, index) => cartProducts.indexOf(id) !== index);
+    setCartProducts(newCartProducts);
+  };
+
   return (
     <Fragment>
       <Header productCount={cartProducts.length} />
       <Routes>
         <Route path="/" element={<MainPage onProductAdd={handleProductAdd} />} />
-        <Route path="/checkout" element={<CheckoutPage cartProducts={cartProducts} />} />
+        <Route
+          path="/checkout"
+          element={
+            <CheckoutPage
+              cartProducts={cartProducts}
+              onAddClick={handleProductAdd}
+              onMinusClick={handleMinusClick}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </Fragment>
