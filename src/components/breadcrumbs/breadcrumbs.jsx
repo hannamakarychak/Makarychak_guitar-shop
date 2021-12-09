@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import './breadcrumbs.scss';
 
 const Breadcrumbs = ({ items }) => {
@@ -8,9 +9,9 @@ const Breadcrumbs = ({ items }) => {
         <li className="breadcrumbs__item" key={item.name}>
           {index !== items.length - 1 ? (
             <Fragment>
-              <a href={item.link} className="breadcrumbs__link">
+              <Link to="/" href={item.link} className="breadcrumbs__link">
                 {item.name}
-              </a>
+              </Link>
               <svg
                 className="breadcrumbs__icon"
                 width="13"
