@@ -1,3 +1,4 @@
+import CheckoutItem from '../checkout-item/checkout-item';
 import Page from '../page/page';
 
 const CheckoutPage = () => {
@@ -13,7 +14,17 @@ const CheckoutPage = () => {
         { name: 'Оформляем', link: '/checkout' },
       ]}
     >
-      <div className="checkout-page">hi</div>
+      <div className="checkout-page">
+        <CheckoutItem
+          amount={1}
+          id={1}
+          code="code"
+          name="name"
+          type="acoustic"
+          stringsNumber={6}
+          price={10000}
+        />
+      </div>
     </Page>
   );
 };

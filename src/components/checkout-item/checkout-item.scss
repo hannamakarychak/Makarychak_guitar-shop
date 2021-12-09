@@ -1,0 +1,119 @@
+.checkout-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 0.7px solid #dddada;
+
+  &:first-child {
+    border-top: 0.7px solid #dddada;
+    margin-top: 29px;
+  }
+}
+
+.checkout-item__delete-button {
+  position: absolute;
+  top: 23px;
+  left: 3px;
+  background-color: transparent;
+  border: none;
+  color: var(--dark-grey);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--grey);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.checkout-item__image-container {
+  display: flex;
+  justify-content: center;
+  width: 152px;
+  height: auto;
+}
+
+.checkout-item__image {
+  text-align: center;
+}
+
+.checkout-item__info {
+  max-width: 35%;
+  width: 100%;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.checkout-item__heading {
+  word-wrap: break-word;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.checkout-item__description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+.checkout-item__price {
+  white-space: nowrap;
+  margin: 0 10px;
+  width: 172px;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+
+  &--bold {
+    margin-right: 0;
+    justify-self: flex-end;
+    margin-left: auto;
+    font-weight: bold;
+  }
+}
+
+.checkout-item__change-amount {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 28px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid var(--dark-grey);
+  color: var(--dark-grey);
+  border-top: 0;
+  border-bottom: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--grey);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.checkout-item__amount {
+  padding: 0 5px;
+  text-align: center;
+  min-width: 28px;
+  color: var(--dark-grey);
+}
+
+.checkout-item__amount-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 71px;
+  margin-right: 8%;
+  border-top: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--dark-grey);
+}
