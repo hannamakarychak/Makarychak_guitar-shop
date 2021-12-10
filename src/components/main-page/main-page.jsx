@@ -7,7 +7,7 @@ import allGuitars from '../../guitars.json';
 import Sort from '../sort/sort';
 
 import './main-page.scss';
-import Popup from '../product-popup/product-popup';
+import ProductPopup from '../product-popup/product-popup';
 
 const PAGE_SIZE = 4;
 
@@ -48,7 +48,13 @@ const MainPage = ({ onProductAdd }) => {
         <div className="main-page__catalog">
           <Sort />
           <Catalog items={guitarsOnPage} onProductAdd={onPopupOpen} />
-          <Popup isPopupOpen={isPopupOpen} onPopupClose={onPopupClose} />
+          <ProductPopup
+            isOpen={isPopupOpen}
+            onClose={onPopupClose}
+            type={'acoustic'}
+            name={'Гитара Честер bass'}
+            primaryButtonLabel="Добавить в корзину"
+          />
           <Pagination
             className="main-page__pagination"
             pageCount={pageCount}
