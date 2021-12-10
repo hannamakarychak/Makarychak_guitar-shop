@@ -1,0 +1,35 @@
+.popup {
+  position: relative;
+  max-width: 740px;
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.popup__heading {
+  margin: 0 0 25px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+}
+
+.popup__close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  border: none;
+  padding: 15px;
+  display: block;
+  color: var(--dark-grey);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--dark);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

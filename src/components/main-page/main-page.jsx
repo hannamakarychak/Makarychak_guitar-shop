@@ -7,16 +7,17 @@ import allGuitars from '../../guitars.json';
 import Sort from '../sort/sort';
 
 import './main-page.scss';
+import Popup from '../product-popup/product-popup';
 
 const PAGE_SIZE = 4;
 
 const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const [isAddPopupOpen, setAddPopupOpen] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
-  const onPopupOpen = (id) => setAddPopupOpen(true);
-  const onPopupClose = () => setAddPopupOpen(false);
+  const onPopupOpen = (id) => setPopupOpen(true);
+  const onPopupClose = () => setPopupOpen(false);
 
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
@@ -47,6 +48,7 @@ const MainPage = ({ onProductAdd }) => {
         <div className="main-page__catalog">
           <Sort />
           <Catalog items={guitarsOnPage} onProductAdd={onPopupOpen} />
+          <Popup isPopupOpen={isPopupOpen} onPopupClose={onPopupClose} />
           <Pagination
             className="main-page__pagination"
             pageCount={pageCount}
