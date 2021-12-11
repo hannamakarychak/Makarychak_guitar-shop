@@ -6,7 +6,17 @@ import HeadingSecondary from '../heading-secondary/heading-secondary';
 
 import './filters.scss';
 
-const Filters = ({ className }) => {
+const Filters = ({ className, onSubmit }) => {
+  // state for each filter by type
+  // types, minPrice, maxPrice, strings
+  /* 
+  onSubmit({
+    types: [],
+    minPrice: 0,
+    maxPrice: 1000,
+    strings: []
+  })
+  */
   return (
     <div className={classNames('filters', className)}>
       <HeadingSecondary className="filters__heading">Фильтр</HeadingSecondary>
