@@ -5,15 +5,15 @@ import Cross from '../icons/cross/cross';
 
 import './popup.scss';
 
-const Popup = ({ isOpen, onClose, children, className }) => {
+const Popup = ({ isOpen, onClose, children, className, heading }) => {
   return (
     <Dialog
       isOpen={isOpen}
       onDismiss={onClose}
-      aria-label="Добавить товар в корзину"
+      aria-label={heading}
       className={classNames(className, 'popup')}
     >
-      <h3 className="popup__heading">Добавить товар в корзину</h3>
+      <h3 className="popup__heading">{heading}</h3>
       <button className="popup__close-button" onClick={onClose}>
         <span className="visually-hidden">Закрыть</span>
         <Cross />

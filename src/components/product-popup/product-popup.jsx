@@ -17,7 +17,12 @@ const ProductPopup = ({
   onSecondaryButtonClick,
 }) => {
   return (
-    <Popup isOpen={isOpen} onClose={onClose} className="product-popup">
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      className="product-popup"
+      heading="Добавить товар в корзину"
+    >
       <div className="product-popup__content">
         <img
           className="product-popup__image"

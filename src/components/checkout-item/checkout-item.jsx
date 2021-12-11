@@ -12,12 +12,10 @@ const CheckoutItem = ({
   type,
   stringsNumber,
   price,
-  cartProducts,
+  numberOfItems,
   onProductAdd,
   onProductRemove,
 }) => {
-  const numberOfItems = cartProducts.filter((el) => el === id).length;
-
   return (
     <div className="checkout-item">
       <button className="checkout-item__delete-button" onClick={() => onProductRemove(id, true)}>
@@ -40,7 +38,7 @@ const CheckoutItem = ({
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
-        <button className="checkout-item__change-amount" onClick={() => onProductRemove(id)}>
+        <button className="checkout-item__change-amount" onClick={() => onProductRemove(id, false)}>
           <Minus />
         </button>
         <span className="checkout-item__amount">{numberOfItems}</span>

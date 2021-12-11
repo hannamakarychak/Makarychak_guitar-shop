@@ -4,7 +4,14 @@ import Heading from '../heading/heading';
 
 const Page = ({ heading, breadcrumbs, children }) => {
   return (
-    <main>
+    <main
+      style={
+        {
+          // z-index: 1;
+          // position: relative;
+        }
+      }
+    >
       <Container>
         <Heading>{heading}</Heading>
         <Breadcrumbs items={breadcrumbs} />

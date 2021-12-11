@@ -10,6 +10,11 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
 
   console.log({ uniqueProducts, cartProducts });
 
+  const handleProductRemove = (productId, shouldRemoveAll, numberOfItems) => {
+    console.log(productId, shouldRemoveAll, numberOfItems);
+    onProductRemove(productId, shouldRemoveAll);
+  };
+
   return (
     <Page
       heading="Корзина"
@@ -25,6 +30,7 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
       <div className="checkout-page">
         {uniqueProducts.map((id) => {
           const element = allGuitars.find((guitar) => guitar.id === id);
+          const numberOfItems = cartProducts.filter((el) => el === id).length;
 
           return (
             <CheckoutItem
@@ -35,9 +41,11 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
               type={element.type}
               stringsNumber={element.stringsNumber}
               price={element.price}
-              cartProducts={cartProducts}
+              numberOfItems={numberOfItems}
               onProductAdd={onProductAdd}
-              onProductRemove={onProductRemove}
+              onProductRemove={(productId, shouldRemoveAll) =>
+                handleProductRemove(productId, shouldRemoveAll, numberOfItems)
+              }
             />
           );
         })}

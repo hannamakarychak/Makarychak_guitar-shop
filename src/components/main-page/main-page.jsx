@@ -5,22 +5,34 @@ import Page from '../page/page';
 import Pagination from '../pagination/pagination';
 import allGuitars from '../../guitars.json';
 import Sort from '../sort/sort';
+import ProductPopup from '../product-popup/product-popup';
+import ConfirmationPopup from '../confirmation-popup/confirmation-popup';
 
 import './main-page.scss';
-import ProductPopup from '../product-popup/product-popup';
 
 const PAGE_SIZE = 4;
 
 const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
-
-  const [isPopupOpen, setPopupOpen] = useState(false);
-
-  const onPopupOpen = (id) => setPopupOpen(true);
-  const onPopupClose = () => setPopupOpen(false);
+  const [selectedProductId, setSelectedProductId] = useState(null);
+  const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(true);
 
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
+  };
+
+  const handleSelectProduct = (id) => {
+    setSelectedProductId(id);
+  };
+
+  const handleCloseProductPopup = () => {
+    setSelectedProductId(null);
+  };
+
+  const handleProductAdd = () => {
+    onProductAdd(selectedProductId);
+    handleCloseProductPopup();
+    setIsConfirmationPopupOpen(true);
   };
 
   const filteredGuitars = allGuitars; // call function to filter out guitars instead of "allGuitars"
@@ -31,6 +43,10 @@ const MainPage = ({ onProductAdd }) => {
     PAGE_SIZE * currentPage,
     PAGE_SIZE * currentPage + PAGE_SIZE
   );
+
+  const selectedProduct = selectedProductId
+    ? allGuitars.find((guitar) => guitar.id === selectedProductId)
+    : {};
 
   return (
     <Page
@@ -47,13 +63,19 @@ const MainPage = ({ onProductAdd }) => {
         <Filters className="main-page__filters" />
         <div className="main-page__catalog">
           <Sort />
-          <Catalog items={guitarsOnPage} onProductAdd={onPopupOpen} />
+          <Catalog items={guitarsOnPage} onProductAdd={handleSelectProduct} />
           <ProductPopup
-            isOpen={isPopupOpen}
-            onClose={onPopupClose}
-            type={'acoustic'}
-            name={'Гитара Честер bass'}
+            isOpen={selectedProductId !== null}
+            onClose={handleCloseProductPopup}
+            type={selectedProduct.type}
+            name={selectedProduct.name}
+            //add remaining
             primaryButtonLabel="Добавить в корзину"
+            onPrimaryButtonClick={handleProductAdd}
+          />
+          <ConfirmationPopup
+            isOpen={isConfirmationPopupOpen}
+            onClose={() => setIsConfirmationPopupOpen(false)}
           />
           <Pagination
             className="main-page__pagination"
