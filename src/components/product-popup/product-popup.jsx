@@ -1,3 +1,4 @@
+import { getNumberWithSpaces } from '../../utils';
 import Button from '../button/button';
 import Popup from '../popup/popup';
 
@@ -15,14 +16,10 @@ const ProductPopup = ({
   onPrimaryButtonClick,
   secondaryButtonLabel,
   onSecondaryButtonClick,
+  heading,
 }) => {
   return (
-    <Popup
-      isOpen={isOpen}
-      onClose={onClose}
-      className="product-popup"
-      heading="Добавить товар в корзину"
-    >
+    <Popup isOpen={isOpen} onClose={onClose} className="product-popup" heading={heading}>
       <div className="product-popup__content">
         <img
           className="product-popup__image"
@@ -34,9 +31,11 @@ const ProductPopup = ({
         />
         <dl className="product-popup__info">
           <dt className="product-popup__name">{name}</dt>
-          <dd className="product-popup__text">Артикул: SO757575</dd>
-          <dd className="product-popup__text">Электрогитара, 6 струнная </dd>
-          <dd className="product-popup__price">Цена: 17 500 ₽ </dd>
+          <dd className="product-popup__text">{`Артикул: ${code}`}</dd>
+          <dd className="product-popup__text">{`${type}, ${stringsNumber} струнная `}</dd>
+          <dd className="product-popup__price">{`Цена: ${
+            price ? getNumberWithSpaces(price) : ``
+          } ₽ `}</dd>
         </dl>
         <div className="product-popup__button-section">
           <Button className="product-popup__button" onClick={onPrimaryButtonClick} accent>

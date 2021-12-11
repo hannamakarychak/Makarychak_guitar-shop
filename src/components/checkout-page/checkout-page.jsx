@@ -1,19 +1,37 @@
+import { useState } from 'react';
 import CheckoutItem from '../checkout-item/checkout-item';
 import Page from '../page/page';
 import Button from '../button/button';
 import allGuitars from '../../guitars.json';
+import ProductPopup from '../product-popup/product-popup';
 
 import './checkout-page.scss';
 
 const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
-  const uniqueProducts = [...new Set(cartProducts)].sort();
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
-  console.log({ uniqueProducts, cartProducts });
-
-  const handleProductRemove = (productId, shouldRemoveAll, numberOfItems) => {
-    console.log(productId, shouldRemoveAll, numberOfItems);
-    onProductRemove(productId, shouldRemoveAll);
+  const handlePopupClose = () => {
+    setSelectedProductId(null);
   };
+
+  const handleProductAmountDecrease = (productId, shouldRemoveAll) => {
+    if (shouldRemoveAll) {
+      setSelectedProductId(productId);
+    } else {
+      onProductRemove(productId, false);
+    }
+  };
+
+  const handleProductRemove = () => {
+    onProductRemove(selectedProductId, true);
+    handlePopupClose();
+  };
+
+  const selectedProduct = selectedProductId
+    ? allGuitars.find((guitar) => guitar.id === selectedProductId)
+    : {};
+
+  const uniqueProducts = [...new Set(cartProducts)].sort();
 
   return (
     <Page
@@ -31,7 +49,6 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
         {uniqueProducts.map((id) => {
           const element = allGuitars.find((guitar) => guitar.id === id);
           const numberOfItems = cartProducts.filter((el) => el === id).length;
-
           return (
             <CheckoutItem
               key={element.id}
@@ -43,12 +60,25 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
               price={element.price}
               numberOfItems={numberOfItems}
               onProductAdd={onProductAdd}
-              onProductRemove={(productId, shouldRemoveAll) =>
-                handleProductRemove(productId, shouldRemoveAll, numberOfItems)
-              }
+              onProductRemove={handleProductAmountDecrease}
             />
           );
         })}
+
+        <ProductPopup
+          isOpen={selectedProductId !== null}
+          onClose={handlePopupClose}
+          code={selectedProduct.code}
+          name={selectedProduct.name}
+          type={selectedProduct.type}
+          stringsNumber={selectedProduct.stringsNumber}
+          price={selectedProduct.price}
+          primaryButtonLabel="Удалить товар"
+          onPrimaryButtonClick={handleProductRemove}
+          secondaryButtonLabel="Продолжить покупки"
+          onSecondaryButtonClick={handlePopupClose}
+          heading="Удалить этот товар?"
+        />
 
         <form className="checkout-page__promo-form">
           <div>

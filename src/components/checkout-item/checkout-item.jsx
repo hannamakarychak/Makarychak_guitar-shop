@@ -38,7 +38,10 @@ const CheckoutItem = ({
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
-        <button className="checkout-item__change-amount" onClick={() => onProductRemove(id, false)}>
+        <button
+          className="checkout-item__change-amount"
+          onClick={() => onProductRemove(id, numberOfItems === 1)}
+        >
           <Minus />
         </button>
         <span className="checkout-item__amount">{numberOfItems}</span>

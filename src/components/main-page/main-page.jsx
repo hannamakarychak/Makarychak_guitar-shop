@@ -15,7 +15,7 @@ const PAGE_SIZE = 4;
 const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedProductId, setSelectedProductId] = useState(null);
-  const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(true);
+  const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(false);
 
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
@@ -69,6 +69,10 @@ const MainPage = ({ onProductAdd }) => {
             onClose={handleCloseProductPopup}
             type={selectedProduct.type}
             name={selectedProduct.name}
+            stringsNumber={selectedProduct.stringsNumber}
+            code={selectedProduct.code}
+            price={selectedProduct.price}
+            heading="Добавить товар в корзину"
             //add remaining
             primaryButtonLabel="Добавить в корзину"
             onPrimaryButtonClick={handleProductAdd}

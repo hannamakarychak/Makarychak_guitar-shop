@@ -33,3 +33,7 @@
     opacity: 0.5;
   }
 }
+
+[data-reach-dialog-overlay] {
+  z-index: 2;
+}
