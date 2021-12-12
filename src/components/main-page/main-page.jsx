@@ -4,16 +4,16 @@ import Filters from '../filters/filters';
 import Page from '../page/page';
 import Pagination from '../pagination/pagination';
 import allGuitars from '../../guitars.json';
-import Sort from '../sort/sort';
+import Sort, { DIRECTION, SORT_TYPES } from '../sort/sort';
 import ProductPopup from '../product-popup/product-popup';
 import ConfirmationPopup from '../confirmation-popup/confirmation-popup';
 
 import './main-page.scss';
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 9;
 
-const getFilteredGuitars = (guitars, filters) => {
-  return guitars.filter((guitar) => {
+const getFilteredSortedGuitars = (guitars, filters, sort) => {
+  const filteredGuitars = guitars.filter((guitar) => {
     const isWithinMinPrice = filters.minPrice !== null ? guitar.price >= filters.minPrice : true;
     const isWithinMaxPrice = filters.maxPrice !== null ? guitar.price <= filters.maxPrice : true;
     const hasSuitableType = filters.types.length !== 0 ? filters.types.includes(guitar.type) : true;
@@ -24,6 +24,26 @@ const getFilteredGuitars = (guitars, filters) => {
 
     return isWithinMinPrice && isWithinMaxPrice && hasSuitableType && hasSuitableStringsNumber;
   });
+
+  if (sort.type !== null && sort.direction !== null) {
+    filteredGuitars.sort((a, b) => {
+      if (sort.type === SORT_TYPES.Price) {
+        if (sort.direction === DIRECTION.Asc) {
+          return a.price - b.price;
+        } else {
+          return b.price - a.price;
+        }
+      } else {
+        if (sort.direction === DIRECTION.Asc) {
+          return a.reviews - b.reviews;
+        } else {
+          return b.reviews - a.reviews;
+        }
+      }
+    });
+  }
+
+  return filteredGuitars;
 };
 
 const MainPage = ({ onProductAdd }) => {
@@ -35,6 +55,10 @@ const MainPage = ({ onProductAdd }) => {
     maxPrice: null,
     types: [],
     stringNumbers: [],
+  });
+  const [sort, setSort] = useState({
+    type: null,
+    direction: null,
   });
 
   const handlePageChange = (event) => {
@@ -59,7 +83,7 @@ const MainPage = ({ onProductAdd }) => {
     setFilters(filtersData);
   };
 
-  const filteredGuitars = getFilteredGuitars(allGuitars, filters);
+  const filteredGuitars = getFilteredSortedGuitars(allGuitars, filters, sort);
 
   const pageCount = Math.ceil(filteredGuitars.length / PAGE_SIZE);
 
@@ -86,7 +110,7 @@ const MainPage = ({ onProductAdd }) => {
       <div className="main-page">
         <Filters className="main-page__filters" onSubmit={handleSetFilters} />
         <div className="main-page__catalog">
-          <Sort />
+          <Sort onChange={setSort} />
           <Catalog items={guitarsOnPage} onProductAdd={handleSelectProduct} />
           <ProductPopup
             isOpen={selectedProductId !== null}

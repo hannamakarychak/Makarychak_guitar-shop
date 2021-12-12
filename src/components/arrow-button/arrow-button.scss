@@ -7,13 +7,16 @@
     fill: var(--black);
 
     &:hover,
-    &:focus,
     &:active {
       fill: var(--medium-grey);
     }
 
     &:active {
       opacity: 0.5;
+    }
+
+    &--active {
+      fill: var(--medium-grey);
     }
   }
 

@@ -23,13 +23,16 @@
   margin-left: 19px;
 
   &:hover,
-  &:focus,
   &:active {
     color: var(--dark);
   }
 
   &:active {
     opacity: 0.5;
+  }
+
+  &--active {
+    color: var(--button-grey-hover);
   }
 
   &:not(:nth-child(1)) {

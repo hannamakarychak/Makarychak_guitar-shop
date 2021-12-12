@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import './arrow-button.scss';
 
-const ArrowButton = ({ isDown, className }) => {
+const ArrowButton = ({ isDown, className, onClick, isActive }) => {
   return (
-    <button className={classNames(className, 'arrow-button')}>
+    <button className={classNames(className, 'arrow-button')} onClick={onClick}>
       {isDown ? (
         <svg
-          className="arrow-button__icon"
+          className={classNames('arrow-button__icon', { 'arrow-button__icon--active': isActive })}
           width="14"
           height="11"
           viewBox="0 0 14 11"
@@ -17,7 +17,7 @@ const ArrowButton = ({ isDown, className }) => {
         </svg>
       ) : (
         <svg
-          className="arrow-button__icon"
+          className={classNames('arrow-button__icon', { 'arrow-button__icon--active': isActive })}
           width="14"
           height="11"
           viewBox="0 0 14 11"
