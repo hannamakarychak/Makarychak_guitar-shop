@@ -1,4 +1,4 @@
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog';
+import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import classNames from 'classnames';
 import Cross from '../icons/cross/cross';

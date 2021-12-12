@@ -10,12 +10,32 @@ import ConfirmationPopup from '../confirmation-popup/confirmation-popup';
 
 import './main-page.scss';
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 6;
+
+const getFilteredGuitars = (guitars, filters) => {
+  return guitars.filter((guitar) => {
+    const isWithinMinPrice = filters.minPrice !== null ? guitar.price >= filters.minPrice : true;
+    const isWithinMaxPrice = filters.maxPrice !== null ? guitar.price <= filters.maxPrice : true;
+    const hasSuitableType = filters.types.length !== 0 ? filters.types.includes(guitar.type) : true;
+    const hasSuitableStringsNumber =
+      filters.stringNumbers.length !== 0
+        ? filters.stringNumbers.includes(guitar.stringsNumber)
+        : true;
+
+    return isWithinMinPrice && isWithinMaxPrice && hasSuitableType && hasSuitableStringsNumber;
+  });
+};
 
 const MainPage = ({ onProductAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(false);
+  const [filters, setFilters] = useState({
+    minPrice: null,
+    maxPrice: null,
+    types: [],
+    stringNumbers: [],
+  });
 
   const handlePageChange = (event) => {
     setCurrentPage(event.selected);
@@ -35,7 +55,11 @@ const MainPage = ({ onProductAdd }) => {
     setIsConfirmationPopupOpen(true);
   };
 
-  const filteredGuitars = allGuitars; // call function to filter out guitars instead of "allGuitars"
+  const handleSetFilters = (filtersData) => {
+    setFilters(filtersData);
+  };
+
+  const filteredGuitars = getFilteredGuitars(allGuitars, filters);
 
   const pageCount = Math.ceil(filteredGuitars.length / PAGE_SIZE);
 
@@ -60,7 +84,7 @@ const MainPage = ({ onProductAdd }) => {
       ]}
     >
       <div className="main-page">
-        <Filters className="main-page__filters" />
+        <Filters className="main-page__filters" onSubmit={handleSetFilters} />
         <div className="main-page__catalog">
           <Sort />
           <Catalog items={guitarsOnPage} onProductAdd={handleSelectProduct} />
@@ -73,7 +97,6 @@ const MainPage = ({ onProductAdd }) => {
             code={selectedProduct.code}
             price={selectedProduct.price}
             heading="Добавить товар в корзину"
-            //add remaining
             primaryButtonLabel="Добавить в корзину"
             onPrimaryButtonClick={handleProductAdd}
           />

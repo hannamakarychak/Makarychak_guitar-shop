@@ -5,6 +5,17 @@ import { getNumberWithSpaces } from '../../utils';
 
 import './checkout-item.scss';
 
+const getTypeTextByType = (type) => {
+  switch (type) {
+    case 'acoustic':
+      return 'акустическая';
+    case 'electro':
+      return 'электрогитара';
+    default:
+      return 'укулеле';
+  }
+};
+
 const CheckoutItem = ({
   id,
   code,
@@ -32,9 +43,11 @@ const CheckoutItem = ({
         />
       </div>
       <dl className="checkout-item__info">
-        <dt className="checkout-item__heading">{`${type} ${name}`}</dt>
+        <dt className="checkout-item__heading">{`${getTypeTextByType(type)} ${name}`}</dt>
         <dd className="checkout-item__description">{`Артикул: ${code}`}</dd>
-        <dd className="checkout-item__description">{`${type} , ${stringsNumber} струнная`}</dd>
+        <dd className="checkout-item__description">{`${getTypeTextByType(
+          type
+        )} , ${stringsNumber} струнная`}</dd>
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
