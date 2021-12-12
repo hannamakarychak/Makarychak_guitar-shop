@@ -6,6 +6,18 @@ import allGuitars from '../../guitars.json';
 import ProductPopup from '../product-popup/product-popup';
 
 import './checkout-page.scss';
+import { getNumberWithSpaces } from '../../utils';
+
+const getTotal = (productIds, promocode) => {
+  let total = 0;
+
+  productIds.forEach((id) => {
+    const guitar = allGuitars.find((el) => el.id === id);
+    total = total + guitar.price;
+  });
+
+  return total;
+};
 
 const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -88,9 +100,12 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
             </label>
             <input className="checkout-page__input" type="text" id="promocode" name="promocode" />
             <Button className="checkout-page__apply-promocode">Применить купон</Button>
+            {true && <div>Промокод не действителен</div>}
           </div>
           <div>
-            <div className="checkout-page__price-total">Всего: 47 000 ₽</div>
+            <div className="checkout-page__price-total">
+              Всего: {getNumberWithSpaces(getTotal(cartProducts))} ₽
+            </div>
             <Button className="checkout-page__submit" accent>
               Оформить заказ
             </Button>
