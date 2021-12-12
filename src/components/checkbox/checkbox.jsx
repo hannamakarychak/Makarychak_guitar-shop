@@ -1,7 +1,24 @@
 import classNames from 'classnames';
+import { useEffect } from 'react';
 import './checkbox.scss';
 
 const Checkbox = ({ id, label, isDisabled, isChecked, className, onChange }) => {
+  useEffect(() => {
+    if (isDisabled && isChecked) {
+      onChange({
+        id,
+        isChecked: false,
+      });
+    }
+  }, [isDisabled, onChange, isChecked, id]);
+
+  const handleChange = (e) => {
+    onChange({
+      id,
+      isChecked: e.target.checked,
+    });
+  };
+
   return (
     <div className={classNames('checkbox', className)}>
       <input
@@ -10,7 +27,7 @@ const Checkbox = ({ id, label, isDisabled, isChecked, className, onChange }) => 
         id={id}
         disabled={isDisabled}
         checked={isChecked}
-        onChange={onChange}
+        onChange={handleChange}
       />
       <label
         htmlFor={id}
