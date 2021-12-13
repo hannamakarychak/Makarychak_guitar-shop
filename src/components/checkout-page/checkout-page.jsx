@@ -4,9 +4,9 @@ import Page from '../page/page';
 import Button from '../button/button';
 import allGuitars from '../../guitars.json';
 import ProductPopup from '../product-popup/product-popup';
+import { getNumberWithSpaces } from '../../utils';
 
 import './checkout-page.scss';
-import { getNumberWithSpaces } from '../../utils';
 
 const getTotal = (productIds, promocode) => {
   let total = 0;
@@ -16,11 +16,38 @@ const getTotal = (productIds, promocode) => {
     total = total + guitar.price;
   });
 
+  if (total === 0) {
+    return total;
+  }
+
+  if (promocode === 'GITARAHIT') {
+    total = total * 0.9;
+  }
+
+  if (promocode === 'SUPERGITARA') {
+    total = total - 700;
+  }
+
+  if (promocode === 'GITARA2020') {
+    if (total * 0.3 < 3000) {
+      total = total - total * 0.3;
+    } else {
+      total = total - 3000;
+    }
+  }
+
   return total;
+};
+
+const checkIfPromocodeValid = (promocode) => {
+  const VALID_PROMOCODES = ['GITARAHIT', 'SUPERGITARA', 'GITARA2020'];
+  return VALID_PROMOCODES.includes(promocode);
 };
 
 const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [promocode, setPromocode] = useState('');
+  const [isPromocodeValid, setIsPromocodeValid] = useState(true);
 
   const handlePopupClose = () => {
     setSelectedProductId(null);
@@ -92,21 +119,33 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
           heading="Удалить этот товар?"
         />
 
-        <form className="checkout-page__promo-form">
+        <form className="checkout-page__promo-form" onSubmit={(e) => e.preventDefault()}>
           <div>
             <h3 className="checkout-page__promo-heading">Промокод на скидку</h3>
             <label htmlFor="promocode" className="checkout-page__promo-label">
               Введите свой промокод, если он у вас есть.
             </label>
-            <input className="checkout-page__input" type="text" id="promocode" name="promocode" />
-            <Button className="checkout-page__apply-promocode">Применить купон</Button>
-            {true && <div>Промокод не действителен</div>}
+            <input
+              className="checkout-page__input"
+              type="text"
+              id="promocode"
+              name="promocode"
+              value={promocode}
+              onChange={(e) => setPromocode(e.target.value)}
+            />
+            <Button
+              className="checkout-page__apply-promocode"
+              onClick={() => setIsPromocodeValid(checkIfPromocodeValid(promocode))}
+            >
+              Применить купон
+            </Button>
+            {!isPromocodeValid && <div>Промокод не действителен</div>}
           </div>
           <div>
             <div className="checkout-page__price-total">
-              Всего: {getNumberWithSpaces(getTotal(cartProducts))} ₽
+              Всего: {getNumberWithSpaces(getTotal(cartProducts, promocode))} ₽
             </div>
-            <Button className="checkout-page__submit" accent>
+            <Button className="checkout-page__submit" type="submit" accent>
               Оформить заказ
             </Button>
           </div>

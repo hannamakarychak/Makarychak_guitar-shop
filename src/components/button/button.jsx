@@ -12,6 +12,7 @@ const Button = ({
   ghost,
   isUppercase,
   onClick,
+  type,
 }) => {
   return (
     <button
@@ -25,6 +26,7 @@ const Button = ({
         { 'button--uppercase': isUppercase }
       )}
       onClick={onClick}
+      type={type}
     >
       {icon && <span>{icon}</span>}
       {children}
