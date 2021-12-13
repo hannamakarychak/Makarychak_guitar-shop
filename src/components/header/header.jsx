@@ -14,7 +14,7 @@ const Header = ({ productCount }) => {
     <header className="header">
       <div className="header__top">
         <Container className="header__container">
-          <Logo />
+          <Logo className="header__logo" />
           <Navigation />
           <ul className="header__list">
             <li className="header__item">
