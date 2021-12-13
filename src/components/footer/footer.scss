@@ -1,6 +1,7 @@
 .footer {
   margin-top: 139px;
   position: relative;
+  flex-shrink: 0;
 
   &::before {
     content: '';
