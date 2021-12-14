@@ -1,13 +1,11 @@
+import { Link } from 'react-router-dom';
 import Container from '../container/container';
 import Logo from '../icons/logo/logo';
 import Navigation from '../navigation/navigation';
-import imageHeader from '../../img/image_header.png';
-import imageHeader2x from '../../img/image_header@2x.png';
 import Basket from '../icons/basket/basket';
 import Search from '../icons/search/search';
 import Location from '../icons/location/location';
 import './header.scss';
-import { Link } from 'react-router-dom';
 
 const Header = ({ productCount }) => {
   return (
@@ -39,8 +37,8 @@ const Header = ({ productCount }) => {
       <div className="header__bottom">
         <img
           className="header__image"
-          srcSet={`${imageHeader}, ${imageHeader2x} 2x`}
-          src={imageHeader}
+          srcSet={`img/image_header.png, img/image_header@2x.png`}
+          src={`img/image_header.png`}
           alt="guitar"
         />
       </div>

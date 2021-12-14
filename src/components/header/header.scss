@@ -4,7 +4,7 @@
 }
 
 .header__bottom {
-  background-image: url('../../img/lines.png');
+  background-image: url('../../assets/lines.png');
   background-position: 0 24px;
   background-repeat: no-repeat;
   background-size: 100% 74px;
@@ -15,7 +15,7 @@
     only screen and (-o-min-device-pixel-ratio: 2/1),
     only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (min-device-pixel-ratio: 2) {
-    background-image: url('../../img/lines@2x.png');
+    background-image: url('../../assets/lines@2x.png');
   }
 }
 

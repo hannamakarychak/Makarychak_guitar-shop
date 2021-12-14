@@ -3,8 +3,6 @@ import Container from '../container/container';
 import SocialsList from '../socials-list/socials-list';
 import Phone from '../icons/phone/phone';
 import Clock from '../icons/clock/clock';
-import imageHeader from '../../img/image_header.png';
-import imageHeader2x from '../../img/image_header@2x.png';
 
 import './footer.scss';
 
@@ -13,8 +11,8 @@ const Footer = () => {
     <footer className="footer">
       <img
         className="footer__image"
-        srcSet={`${imageHeader}, ${imageHeader2x} 2x`}
-        src={imageHeader}
+        srcSet={`img/image_header.png, img/image_header@2x.png`}
+        src={`img/image_header.png`}
         alt="guitar"
       />
       <div className="footer__content">
