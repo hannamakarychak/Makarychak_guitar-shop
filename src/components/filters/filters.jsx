@@ -65,14 +65,14 @@ const Filters = ({ className, onSubmit }) => {
       <HeadingSecondary className="filters__heading">Фильтр</HeadingSecondary>
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="filters__container">
-          <label htmlFor="price" className="filters__text">
+          <label htmlFor="min-price" className="filters__text">
             Цена, ₽
           </label>
           <div className="filters__input-container">
             <input
               type="number"
               min="0"
-              id="price"
+              id="min-price"
               placeholder={getNumberWithSpaces(1000)}
               className="filters__price"
               value={minPrice}
@@ -83,7 +83,7 @@ const Filters = ({ className, onSubmit }) => {
             <input
               type="number"
               min="0"
-              id="price"
+              id="max-price"
               placeholder={getNumberWithSpaces(30000)}
               className="filters__price"
               value={maxPrice}

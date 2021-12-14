@@ -22,7 +22,7 @@ const CatalogItem = ({ className, name, id, type, reviews, price, onAdd }) => {
         <span className="catalog-item__reviews-count">{reviews}</span>
       </div>
       <div className="catalog-item__description">
-        <h4 className="catalog-item__heading">{name}</h4>
+        <h3 className="catalog-item__heading">{name}</h3>
         <span className="catalog-item__price">{getNumberWithSpaces(price)} ₽</span>
       </div>
       <div className="catalog-item__buttons">
