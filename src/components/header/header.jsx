@@ -18,16 +18,19 @@ const Header = ({ productCount }) => {
             <li className="header__item">
               <a className="header__link" href="/">
                 <Location className="header__icon" />
+                <span className="visually-hidden">Карта</span>
               </a>
             </li>
             <li className="header__item">
               <a className="header__link" href="/">
+                <span className="visually-hidden">Поиск</span>
                 <Search className="header__icon" />
               </a>
             </li>
             <li className="header__item">
               <Link className="header__link" to="/checkout">
                 <Basket className="header__icon" />
+                <span className="visually-hidden">Корзина</span>
                 {productCount > 0 && <span className="header__items-count">{productCount}</span>}
               </Link>
             </li>

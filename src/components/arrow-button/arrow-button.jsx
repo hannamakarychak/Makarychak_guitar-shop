@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import './arrow-button.scss';
 
-const ArrowButton = ({ isDown, className, onClick, isActive }) => {
+const ArrowButton = ({ isDown, className, onClick, isActive, label }) => {
   return (
-    <button className={classNames(className, 'arrow-button')} onClick={onClick}>
+    <button className={classNames(className, 'arrow-button')} onClick={onClick} aria-label={label}>
       {isDown ? (
         <svg
           className={classNames('arrow-button__icon', { 'arrow-button__icon--active': isActive })}

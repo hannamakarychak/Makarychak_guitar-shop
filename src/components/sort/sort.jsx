@@ -62,12 +62,14 @@ const Sort = ({ onChange }) => {
           className="sort__arrow-button"
           onClick={() => handleChangeDirection(DIRECTION.Asc)}
           isActive={direction === DIRECTION.Asc}
+          label="От меньшего к большему"
         />
         <ArrowButton
           className="sort__arrow-button"
           onClick={() => handleChangeDirection(DIRECTION.Desc)}
           isActive={direction === DIRECTION.Desc}
           isDown
+          label="От большего к меньшему"
         />
       </div>
     </div>
