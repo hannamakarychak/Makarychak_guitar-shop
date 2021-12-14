@@ -1,4 +1,4 @@
-import { getNumberWithSpaces } from '../../utils';
+import { getNumberWithSpaces, getTypeTextByType } from '../../utils';
 import Button from '../button/button';
 import Popup from '../popup/popup';
 
@@ -26,16 +26,18 @@ const ProductPopup = ({
           srcSet={`img/${type}-small.png, img/${type}-small@2x.png`}
           src={`img/${type}-small.png`}
           alt={name}
-          width="48px"
-          height="124px"
+          width="56px"
+          height="128px"
         />
         <dl className="product-popup__info">
-          <dt className="product-popup__name">{name}</dt>
-          <dd className="product-popup__text">{`Артикул: ${code}`}</dd>
-          <dd className="product-popup__text">{`${type}, ${stringsNumber} струнная `}</dd>
-          <dd className="product-popup__price">{`Цена: ${
-            price ? getNumberWithSpaces(price) : ``
-          } ₽ `}</dd>
+          <dt className="product-popup__name">Гитара {name}</dt>
+          <dd className="product-popup__text">Артикул: ${code}</dd>
+          <dd className="product-popup__text">
+            {getTypeTextByType(type)}, {stringsNumber} струнная
+          </dd>
+          <dd className="product-popup__price">
+            Цена: {price ? getNumberWithSpaces(price) : ``} ₽
+          </dd>
         </dl>
         <div className="product-popup__button-section">
           <Button className="product-popup__button" onClick={onPrimaryButtonClick} accent>

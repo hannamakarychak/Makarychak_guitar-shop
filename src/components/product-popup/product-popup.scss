@@ -14,7 +14,7 @@
   font-weight: bold;
   font-size: 16px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
   margin: 0 0 14px 0;
 }
@@ -22,7 +22,7 @@
 .product-popup__text {
   font-size: 14px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.2px;
   margin: 0 0 6px 0;
 }
 
@@ -30,7 +30,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.2px;
   margin: 20px 20px 0 0;
   white-space: nowrap;
 }
@@ -40,16 +40,17 @@
   flex-direction: column;
   justify-self: flex-end;
   margin-left: auto;
-  width: 36%;
 }
 
 .product-popup__button {
   font-size: 16px;
-  padding: 13px 17px;
-  width: 100%;
-  max-width: 220px;
+  padding: 15px 6px;
+  width: 220px;
+  margin-top: 16px;
+
+  letter-spacing: 1.5px;
 
   &:first-child {
-    margin-bottom: 16px;
+    margin-top: 14px;
   }
 }

@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 import MainPage from './components/main-page/main-page';
 
 function App() {
-  const [cartProducts, setCartProducts] = useState(['1', '2', '3', '1', '1', '1']);
+  const [cartProducts, setCartProducts] = useState([]);
 
   const handleProductAdd = (id) => {
     setCartProducts([...cartProducts, id]);

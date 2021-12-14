@@ -139,7 +139,9 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
           >
             Применить купон
           </Button>
-          {!isPromocodeValid && <div>Промокод не действителен</div>}
+          {!isPromocodeValid && (
+            <div className="checkout-page__error">Промокод не действителен</div>
+          )}
         </div>
         <div>
           <div className="checkout-page__price-total">

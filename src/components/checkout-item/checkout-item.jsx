@@ -1,20 +1,9 @@
 import Minus from '../icons/minus/minus';
 import Plus from '../icons/plus/plus';
 import Cross from '../icons/cross/cross';
-import { getNumberWithSpaces } from '../../utils';
+import { getNumberWithSpaces, getTypeTextByType } from '../../utils';
 
 import './checkout-item.scss';
-
-const getTypeTextByType = (type) => {
-  switch (type) {
-    case 'acoustic':
-      return 'акустическая';
-    case 'electro':
-      return 'электрогитара';
-    default:
-      return 'укулеле';
-  }
-};
 
 const CheckoutItem = ({
   id,
