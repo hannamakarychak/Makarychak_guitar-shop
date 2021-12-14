@@ -5,14 +5,14 @@
 .checkout-page__promo-form {
   display: flex;
   justify-content: space-between;
-  padding: 32px 0;
+  padding: 40px 0 32px;
 }
 
 .checkout-page__promo-heading {
   font-weight: bold;
   font-size: 16px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.2px;
   margin: 0 0 9px 0;
 }
 
@@ -20,7 +20,7 @@
   display: block;
   font-size: 12px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.9px;
   margin-bottom: 20px;
 }
 
@@ -31,7 +31,7 @@
   word-wrap: break-word;
   font-size: 16px;
   line-height: 15px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.2px;
   padding: 7px;
   margin-right: 33px;
   border: 2px solid #dddada;
@@ -41,9 +41,10 @@
 .checkout-page__apply-promocode {
   font-size: 16px;
   line-height: 15px;
-  letter-spacing: 0.05em;
-  padding: 10px;
+  letter-spacing: 1.6px;
+  padding: 10px 10px 10px 22px;
   min-width: 200px;
+  text-align: left;
 }
 
 .checkout-page__price-total {
@@ -51,7 +52,7 @@
   font-size: 20px;
   line-height: 15px;
   text-align: end;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.4px;
   margin-bottom: 44px;
 }
 
@@ -60,5 +61,5 @@
   font-size: 16px;
   line-height: 15px;
   padding: 10px;
-  letter-spacing: 0.05em;
+  letter-spacing: 1.3px;
 }
