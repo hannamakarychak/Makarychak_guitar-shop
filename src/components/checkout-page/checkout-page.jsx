@@ -83,74 +83,73 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
         { name: 'Каталог', link: '/' },
         { name: 'Оформляем', link: '/checkout' },
       ]}
+      className="checkout-page"
     >
-      <div className="checkout-page">
-        {uniqueProducts.map((id) => {
-          const element = allGuitars.find((guitar) => guitar.id === id);
-          const numberOfItems = cartProducts.filter((el) => el === id).length;
-          return (
-            <CheckoutItem
-              key={element.id}
-              id={element.id}
-              code={element.code}
-              name={element.name}
-              type={element.type}
-              stringsNumber={element.stringsNumber}
-              price={element.price}
-              numberOfItems={numberOfItems}
-              onProductAdd={onProductAdd}
-              onProductRemove={handleProductAmountDecrease}
-            />
-          );
-        })}
+      {uniqueProducts.map((id) => {
+        const element = allGuitars.find((guitar) => guitar.id === id);
+        const numberOfItems = cartProducts.filter((el) => el === id).length;
+        return (
+          <CheckoutItem
+            key={element.id}
+            id={element.id}
+            code={element.code}
+            name={element.name}
+            type={element.type}
+            stringsNumber={element.stringsNumber}
+            price={element.price}
+            numberOfItems={numberOfItems}
+            onProductAdd={onProductAdd}
+            onProductRemove={handleProductAmountDecrease}
+          />
+        );
+      })}
 
-        <ProductPopup
-          isOpen={selectedProductId !== null}
-          onClose={handlePopupClose}
-          code={selectedProduct.code}
-          name={selectedProduct.name}
-          type={selectedProduct.type}
-          stringsNumber={selectedProduct.stringsNumber}
-          price={selectedProduct.price}
-          primaryButtonLabel="Удалить товар"
-          onPrimaryButtonClick={handleProductRemove}
-          secondaryButtonLabel="Продолжить покупки"
-          onSecondaryButtonClick={handlePopupClose}
-          heading="Удалить этот товар?"
-        />
+      <ProductPopup
+        isOpen={selectedProductId !== null}
+        onClose={handlePopupClose}
+        code={selectedProduct.code}
+        name={selectedProduct.name}
+        type={selectedProduct.type}
+        stringsNumber={selectedProduct.stringsNumber}
+        price={selectedProduct.price}
+        primaryButtonLabel="Удалить товар"
+        onPrimaryButtonClick={handleProductRemove}
+        secondaryButtonLabel="Продолжить покупки"
+        onSecondaryButtonClick={handlePopupClose}
+        heading="Удалить этот товар?"
+      />
 
-        <form className="checkout-page__promo-form" onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <h3 className="checkout-page__promo-heading">Промокод на скидку</h3>
-            <label htmlFor="promocode" className="checkout-page__promo-label">
-              Введите свой промокод, если он у вас есть.
-            </label>
-            <input
-              className="checkout-page__input"
-              type="text"
-              id="promocode"
-              name="promocode"
-              value={promocode}
-              onChange={(e) => setPromocode(e.target.value)}
-            />
-            <Button
-              className="checkout-page__apply-promocode"
-              onClick={() => setIsPromocodeValid(checkIfPromocodeValid(promocode))}
-            >
-              Применить купон
-            </Button>
-            {!isPromocodeValid && <div>Промокод не действителен</div>}
+      <form className="checkout-page__promo-form" onSubmit={(e) => e.preventDefault()}>
+        <div>
+          <h3 className="checkout-page__promo-heading">Промокод на скидку</h3>
+          <label htmlFor="promocode" className="checkout-page__promo-label">
+            Введите свой промокод, если он у вас есть.
+          </label>
+          <input
+            className="checkout-page__input"
+            type="text"
+            id="promocode"
+            name="promocode"
+            value={promocode}
+            onChange={(e) => setPromocode(e.target.value)}
+          />
+          <Button
+            className="checkout-page__apply-promocode"
+            onClick={() => setIsPromocodeValid(checkIfPromocodeValid(promocode))}
+          >
+            Применить купон
+          </Button>
+          {!isPromocodeValid && <div>Промокод не действителен</div>}
+        </div>
+        <div>
+          <div className="checkout-page__price-total">
+            Всего: {getNumberWithSpaces(getTotal(cartProducts, promocode))} ₽
           </div>
-          <div>
-            <div className="checkout-page__price-total">
-              Всего: {getNumberWithSpaces(getTotal(cartProducts, promocode))} ₽
-            </div>
-            <Button className="checkout-page__submit" type="submit" accent>
-              Оформить заказ
-            </Button>
-          </div>
-        </form>
-      </div>
+          <Button className="checkout-page__submit" type="submit" accent>
+            Оформить заказ
+          </Button>
+        </div>
+      </form>
     </Page>
   );
 };

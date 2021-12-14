@@ -47,7 +47,7 @@ const CheckoutItem = ({
         <dd className="checkout-item__description">{`Артикул: ${code}`}</dd>
         <dd className="checkout-item__description">{`${getTypeTextByType(
           type
-        )} , ${stringsNumber} струнная`}</dd>
+        )}, ${stringsNumber} струнная`}</dd>
       </dl>
       <span className="checkout-item__price">{`${getNumberWithSpaces(price)} ₽`}</span>
       <div className="checkout-item__amount-block">
