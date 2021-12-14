@@ -92,7 +92,7 @@ const Filters = ({ className, onSubmit }) => {
             />
           </div>
         </div>
-        <div className="filters__container">
+        <div className="filters__container filters__container--first">
           <fieldset className="filters__fieldset">
             <legend className="filters__text">Тип гитар</legend>
             <Checkbox

@@ -14,8 +14,8 @@ const CatalogItem = ({ className, name, id, type, reviews, price, onAdd }) => {
         srcSet={`img/${type}.png, img/${type}@2x.png`}
         src={`img/${type}.png`}
         alt={name}
-        width="48px"
-        height="124px"
+        width="68px"
+        height="190px"
       />
       <div className="catalog-item__reviews">
         <Stars />

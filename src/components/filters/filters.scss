@@ -10,13 +10,17 @@
   width: 100%;
   padding: 30px 0 31px 0;
   border-top: 0.7px solid #dddada;
+
+  &--first {
+    padding: 30px 0 17px 0;
+  }
 }
 
 .filters__input-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 31px;
+  margin-top: 22px;
 }
 
 .filters__heading,
@@ -36,7 +40,7 @@
   font-size: 14px;
   line-height: 10px;
   letter-spacing: 0.05em;
-  padding: 5px;
+  padding: 5px 5px 5px 15px;
   border: 0.7px solid #9f9e9e;
   border-radius: 2px;
   color: rgba(0, 0, 0, 0.6);
@@ -53,5 +57,5 @@
 }
 
 .filters__button {
-  margin-top: 10px;
+  margin-top: -5px;
 }

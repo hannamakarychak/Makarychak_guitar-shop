@@ -37,6 +37,14 @@
     color: var(--dark);
     opacity: 0.5;
   }
+
+  &--prev {
+    margin-right: 14px;
+  }
+
+  &--next {
+    margin-left: 4px;
+  }
 }
 
 .pagination__link {
@@ -45,5 +53,10 @@
   letter-spacing: 0.05em;
   color: inherit;
   display: inline-block;
-  padding: 2px 9px;
+  padding: 1px 8px;
+  vertical-align: middle;
+
+  &--wide {
+    padding: 2px 20px;
+  }
 }
