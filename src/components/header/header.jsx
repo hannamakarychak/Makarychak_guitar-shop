@@ -40,7 +40,7 @@ const Header = ({ productCount }) => {
       <div className="header__bottom">
         <img
           className="header__image"
-          srcSet={`img/image_header.png, img/image_header@2x.png`}
+          srcSet={`img/image_header.png, img/image_header@2x.png 2x`}
           src={`img/image_header.png`}
           alt="guitar"
         />

@@ -23,7 +23,7 @@ const ProductPopup = ({
       <div className="product-popup__content">
         <img
           className="product-popup__image"
-          srcSet={`img/${type}-small.png, img/${type}-small@2x.png`}
+          srcSet={`img/${type}-small.png, img/${type}-small@2x.png 2x`}
           src={`img/${type}-small.png`}
           alt={name}
           width="56px"

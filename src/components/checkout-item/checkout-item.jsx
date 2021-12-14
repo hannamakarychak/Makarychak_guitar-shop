@@ -24,7 +24,7 @@ const CheckoutItem = ({
       <div className="checkout-item__image-container">
         <img
           className="checkout-item__image"
-          srcSet={`img/${type}-small.png, img/${type}-small@2x.png`}
+          srcSet={`img/${type}-small.png, img/${type}-small@2x.png 2x`}
           src={`img/${type}-small.png`}
           alt={name}
           width="48px"

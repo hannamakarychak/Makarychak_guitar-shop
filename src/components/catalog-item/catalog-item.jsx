@@ -11,7 +11,7 @@ const CatalogItem = ({ className, name, id, type, reviews, price, onAdd }) => {
     <div className={classNames(className, 'catalog-item')}>
       <img
         className="catalog-item__image"
-        srcSet={`img/${type}.png, img/${type}@2x.png`}
+        srcSet={`img/${type}.png, img/${type}@2x.png 2x`}
         src={`img/${type}.png`}
         alt={name}
         width="68px"
