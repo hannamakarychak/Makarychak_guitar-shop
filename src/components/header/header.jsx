@@ -30,8 +30,8 @@ const Header = ({ productCount }) => {
             <li className="header__item">
               <Link className="header__link" to="/checkout">
                 <Basket className="header__icon" />
+                {productCount > 0 && <span className="header__items-count">{productCount}</span>}
               </Link>
-              {productCount > 0 && <span className="header__items-count">{productCount}</span>}
             </li>
           </ul>
         </Container>
