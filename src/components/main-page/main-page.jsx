@@ -128,12 +128,14 @@ const MainPage = ({ onProductAdd }) => {
             isOpen={isConfirmationPopupOpen}
             onClose={() => setIsConfirmationPopupOpen(false)}
           />
-          <Pagination
-            className="main-page__pagination"
-            pageCount={pageCount}
-            currentPage={currentPage}
-            onPageChange={handlePageChange}
-          />
+          {filteredGuitars.length > 0 && (
+            <Pagination
+              className="main-page__pagination"
+              pageCount={pageCount}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          )}
         </div>
       </div>
     </Page>
