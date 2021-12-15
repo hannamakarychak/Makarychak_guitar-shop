@@ -40,16 +40,21 @@
   font-size: 14px;
   line-height: 10px;
   letter-spacing: 0.05em;
-  padding: 5px 5px 5px 15px;
+  padding: 5px;
   border: 0.7px solid #9f9e9e;
   border-radius: 2px;
-  color: rgba(0, 0, 0, 0.6);
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
 }
 
 .filters__line {
   width: 14px;
+  height: 2px;
   margin: 0 5px;
-  border: 1px solid #585757;
+  background-color: var(--button-grey-hover);
+  display: inline-block;
 }
 
 .filters__checkbox {

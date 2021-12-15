@@ -12,10 +12,12 @@ function App() {
     setCartProducts([...cartProducts, id]);
   };
 
-  const handleProductRemove = (id, shouldRemoveAll = false) => {
-    const newCartProducts = shouldRemoveAll
-      ? cartProducts.filter((el) => el !== id)
-      : cartProducts.filter((el, index) => cartProducts.indexOf(id) !== index);
+  const handleProductAmountChange = (id, newNumberOfItems) => {
+    console.log({ id, newNumberOfItems });
+    const newCartProducts = [
+      ...cartProducts.filter((el) => el !== id),
+      ...new Array(newNumberOfItems).fill(id),
+    ];
     setCartProducts(newCartProducts);
   };
 
@@ -29,8 +31,7 @@ function App() {
           element={
             <CheckoutPage
               cartProducts={cartProducts}
-              onProductAdd={handleProductAdd}
-              onProductRemove={handleProductRemove}
+              onProductAmountChange={handleProductAmountChange}
             />
           }
         />

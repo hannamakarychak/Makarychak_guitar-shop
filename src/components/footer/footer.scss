@@ -47,6 +47,7 @@
 
 .footer__left {
   margin-right: 123px;
+  max-width: 118px;
 }
 
 .footer__socials-list {
@@ -76,10 +77,14 @@
   }
 }
 
-.footer__link {
-  display: block;
-  font-size: 10px;
+.footer__list-item {
   line-height: 20px;
+}
+
+.footer__link {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 16px;
   letter-spacing: 0.1em;
   text-decoration: none;
   color: var(--white);

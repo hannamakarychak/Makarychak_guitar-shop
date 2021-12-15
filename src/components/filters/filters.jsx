@@ -101,6 +101,9 @@ const Filters = ({ className, onSubmit }) => {
               className="filters__checkbox"
               isChecked={types.includes('acoustic')}
               onChange={handleTypeChange}
+              isDisabled={
+                !(stringNumbers.length === 0 || [6, 7, 12].some((n) => stringNumbers.includes(n)))
+              }
             />
             <Checkbox
               id="electro"
@@ -108,6 +111,9 @@ const Filters = ({ className, onSubmit }) => {
               className="filters__checkbox"
               isChecked={types.includes('electro')}
               onChange={handleTypeChange}
+              isDisabled={
+                !(stringNumbers.length === 0 || [4, 6, 7].some((n) => stringNumbers.includes(n)))
+              }
             />
             <Checkbox
               id="ukulele"
@@ -115,6 +121,9 @@ const Filters = ({ className, onSubmit }) => {
               className="filters__checkbox"
               isChecked={types.includes('ukulele')}
               onChange={handleTypeChange}
+              isDisabled={
+                !(stringNumbers.length === 0 || [4].some((n) => stringNumbers.includes(n)))
+              }
             />
           </fieldset>
         </div>

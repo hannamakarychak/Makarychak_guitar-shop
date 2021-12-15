@@ -96,6 +96,7 @@
   border-top: 0;
   border-bottom: 0;
   cursor: pointer;
+  flex: 0 0 auto;
 
   &:hover {
     color: var(--grey);
@@ -107,10 +108,12 @@
 }
 
 .checkout-item__amount {
+  all: unset;
   padding: 0 5px;
   text-align: center;
-  min-width: 28px;
   color: var(--dark-grey);
+  width: 28px;
+  box-sizing: border-box;
 }
 
 .checkout-item__amount-block {
@@ -120,4 +123,5 @@
   border-bottom: 1px solid var(--dark-grey);
   margin-top: 20px;
   align-self: flex-start;
+  justify-content: space-between;
 }

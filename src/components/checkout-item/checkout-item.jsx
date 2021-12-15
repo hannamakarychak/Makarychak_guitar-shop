@@ -4,6 +4,7 @@ import Cross from '../icons/cross/cross';
 import { getNumberWithSpaces, getTypeTextByType } from '../../utils';
 
 import './checkout-item.scss';
+import { useEffect, useState } from 'react';
 
 const CheckoutItem = ({
   id,
@@ -13,12 +14,39 @@ const CheckoutItem = ({
   stringsNumber,
   price,
   numberOfItems,
-  onProductAdd,
-  onProductRemove,
+  onProductAmountChange,
 }) => {
+  const [amount, setAmount] = useState(numberOfItems);
+  console.log({ amount });
+  useEffect(() => {
+    setAmount(numberOfItems);
+  }, [numberOfItems]);
+
+  const handleAmountChange = (e) => {
+    const value = +e.target.value;
+    if (isNaN(value)) {
+      return;
+    }
+
+    if (e.target.value === '') {
+      setAmount(e.target.value);
+    } else {
+      setAmount(value);
+    }
+  };
+
+  const handleAmountBlur = () => {
+    if (amount === '' || amount === 0) {
+      setAmount(1);
+      onProductAmountChange(id, 1);
+    } else {
+      onProductAmountChange(id, amount);
+    }
+  };
+
   return (
     <div className="checkout-item">
-      <button className="checkout-item__delete-button" onClick={() => onProductRemove(id, true)}>
+      <button className="checkout-item__delete-button" onClick={() => onProductAmountChange(id, 0)}>
         <Cross />
       </button>
       <div className="checkout-item__image-container">
@@ -42,12 +70,22 @@ const CheckoutItem = ({
       <div className="checkout-item__amount-block">
         <button
           className="checkout-item__change-amount"
-          onClick={() => onProductRemove(id, numberOfItems === 1)}
+          onClick={() => onProductAmountChange(id, numberOfItems - 1)}
         >
           <Minus />
         </button>
-        <span className="checkout-item__amount">{numberOfItems}</span>
-        <button className="checkout-item__change-amount" onClick={() => onProductAdd(id)}>
+        <input
+          className="checkout-item__amount"
+          type="text"
+          id="amount"
+          value={amount}
+          onChange={handleAmountChange}
+          onBlur={handleAmountBlur}
+        />
+        <button
+          className="checkout-item__change-amount"
+          onClick={() => onProductAmountChange(id, numberOfItems + 1)}
+        >
           <Plus />
         </button>
       </div>

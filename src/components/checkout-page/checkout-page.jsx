@@ -44,7 +44,7 @@ const checkIfPromocodeValid = (promocode) => {
   return VALID_PROMOCODES.includes(promocode);
 };
 
-const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
+const CheckoutPage = ({ cartProducts, onProductAmountChange }) => {
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [promocode, setPromocode] = useState('');
   const [isPromocodeValid, setIsPromocodeValid] = useState(true);
@@ -53,16 +53,17 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
     setSelectedProductId(null);
   };
 
-  const handleProductAmountDecrease = (productId, shouldRemoveAll) => {
+  const handleProductAmountChange = (productId, newNumberOfItems) => {
+    const shouldRemoveAll = newNumberOfItems === 0;
     if (shouldRemoveAll) {
       setSelectedProductId(productId);
     } else {
-      onProductRemove(productId, false);
+      onProductAmountChange(productId, newNumberOfItems);
     }
   };
 
   const handleProductRemove = () => {
-    onProductRemove(selectedProductId, true);
+    onProductAmountChange(selectedProductId, 0);
     handlePopupClose();
   };
 
@@ -98,8 +99,7 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
             stringsNumber={element.stringsNumber}
             price={element.price}
             numberOfItems={numberOfItems}
-            onProductAdd={onProductAdd}
-            onProductRemove={handleProductAmountDecrease}
+            onProductAmountChange={handleProductAmountChange}
           />
         );
       })}
@@ -131,7 +131,7 @@ const CheckoutPage = ({ cartProducts, onProductAdd, onProductRemove }) => {
             id="promocode"
             name="promocode"
             value={promocode}
-            onChange={(e) => setPromocode(e.target.value)}
+            onChange={(e) => setPromocode(e.target.value.replace(/ /g, ''))}
           />
           <Button
             className="checkout-page__apply-promocode"
