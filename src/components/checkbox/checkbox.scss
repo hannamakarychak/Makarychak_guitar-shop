@@ -16,13 +16,15 @@
 }
 
 .checkbox__input {
-  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 24px;
-  width: 24px;
-  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.checkbox__input:focus + .checkbox__label:before {
+  outline: 2px solid #0769eb;
 }
 
 .checkbox__label {
